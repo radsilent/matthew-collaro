@@ -1,7 +1,7 @@
 ---
 title: Projects — Matthew Collaro
 h1: Projects
-description: Engineering projects by Matthew Collaro, including VectorMBE, the Model Context Protocol server for MBSE toolchains, and an Isaac ROS perception kit for edge hardware.
+description: Engineering projects by Matthew Collaro, including VectorMBE, a Model Context Protocol server for MBSE toolchains, and model-based safety assessment tooling.
 type: page
 date: 2026-07-24
 ---
@@ -24,11 +24,6 @@ A Model Context Protocol server that gives AI assistants governed access to an M
 
 The design principle is that an agent should not be able to assert something about the system that the model cannot back up. Retrieval is grounded in the graph, and validation runs against rules the agent does not control.
 
-## Isaac ROS Perception Kit
-
-A reproducible perception pipeline built on NVIDIA Isaac ROS, pairing the Synthetica DETR detection model with Isaac Sim for synthetic data generation, targeted at modest edge hardware rather than a datacenter GPU.
-
-The interesting constraint was fitting a real-time detection and tracking stack onto a small-form-factor workstation with an 8 GB card, which forces honest decisions about model selection, batch sizing, and where to spend memory. Source is on [GitHub](https://github.com/radsilent).
 
 ## Model-based safety and hazard assessment tooling
 

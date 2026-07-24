@@ -6,13 +6,13 @@ type: page
 date: 2026-07-24
 ---
 
-Matthew Collaro — Phoenix, AZ. Systems engineer with seven years across aerospace, defense, and automotive, currently building an AI engineering platform full time alongside a senior systems role.
+Matthew Collaro. Systems engineer with seven years across aerospace, defense, and automotive, currently building an AI engineering platform full time alongside a senior systems role.
 
 ## Experience
 
 ### Senior Systems Engineer — Lucid Motors
 
-*Phoenix, AZ and Newark, CA (hybrid) · November 2025 to present*
+*November 2025 to present*
 
 - Cross-domain integration of infotainment and driver feedback systems on autonomy-enabled vehicle builds, resolving notification timing, media routing, and vehicle state synchronization defects affecting feature readiness.
 - MBSE and SysML behavioral models of vehicle audio architectures and HMI interaction flows, clarifying signal dependencies and functional ownership across infotainment controllers, body modules, and autonomous compute domains.
@@ -33,7 +33,7 @@ Patent-pending Autonomous Requirements Traceability and Engineering Synchronizat
 
 ### Lead Model Based Systems Engineer — Boeing Commercial Airplanes
 
-*Everett, WA · September 2022 to November 2024*
+*September 2022 to November 2024*
 
 - Created model-based Interface Control Diagrams identifying networked system vulnerabilities in support of aircraft cybersecurity threat analysis.
 - Authored the Systems Engineering Management Plan for a next-generation long-range aircraft program, defining modeling governance and development workflows.
@@ -44,7 +44,7 @@ Patent-pending Autonomous Requirements Traceability and Engineering Synchronizat
 
 ### Systems Engineer, Interface Design and MBSE — Northrop Grumman Space Systems
 
-*Roy, UT · January 2022 to August 2022*
+*January 2022 to August 2022*
 
 - Restored and expanded degraded system architecture models in Cameo, improving traceability, usability, and stakeholder confidence in model-driven artifacts.
 
@@ -56,7 +56,7 @@ Patent-pending Autonomous Requirements Traceability and Engineering Synchronizat
 
 ### Systems Engineer — Raytheon Missiles and Defense
 
-*Tucson, AZ · June 2020 to July 2021*
+*June 2020 to July 2021*
 
 - Modeled embedded system interfaces supporting cybersecurity objectives and reducing reverse engineering exposure across strategic missile subsystems.
 - Developed SysML and DoDAF architecture models enabling integration planning, verification alignment, and configuration-controlled technical communication.
@@ -64,7 +64,7 @@ Patent-pending Autonomous Requirements Traceability and Engineering Synchronizat
 
 ### Manufacturing Engineer — Parker Hannifin Aerospace
 
-*Irvine, CA · January 2019 to May 2020*
+*January 2019 to May 2020*
 
 - Created repair and overhaul work instructions for electro-mechanical flight control actuation systems supporting military aircraft sustainment.
 - Coordinated implementation of Solumina MRO process planning software, improving production workflow visibility.

@@ -1,12 +1,12 @@
 ---
-title: Matthew Collaro — Systems Engineer, Phoenix Arizona
+title: Matthew Collaro — Systems Engineer and Founder
 h1: Matthew Collaro
-description: Matthew Collaro is a systems engineer in Phoenix, Arizona and founder of Vector Stream Systems LLC. Seven years of model-based systems engineering across Boeing, Northrop Grumman, Raytheon, Deloitte, and Lucid Motors.
+description: Matthew Collaro is a systems engineer and founder of Vector Stream Systems LLC. Seven years of model-based systems engineering across Boeing, Northrop Grumman, Raytheon, Deloitte, and Lucid Motors.
 type: page
 date: 2026-07-24
 ---
 
-Systems engineer based in Phoenix, Arizona. Founder and Platform Systems Architect at [Vector Stream Systems LLC](https://vectorstreamsystems.com/), and Senior Systems Engineer at Lucid Motors.
+Systems engineer. Founder and Platform Systems Architect at [Vector Stream Systems LLC](https://vectorstreamsystems.com/), and Senior Systems Engineer at Lucid Motors.
 
 I have spent seven years modeling, integrating, and verifying systems in environments where unverified artifacts do not ship — commercial aircraft networks, strategic missile subsystems, naval concept architectures, and production electric vehicles. That work has run through Boeing Commercial Airplanes, Northrop Grumman Space Systems, Raytheon Missiles & Defense, Deloitte Government & Public Services, and Parker Hannifin Aerospace.
 

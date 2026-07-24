@@ -23,7 +23,3 @@ I am open to conversations about model-based systems engineering adoption, requi
 **Governed AI tooling for engineering.** If you want language models near your requirements or your architecture model, the interesting problem is not the model. It is the constraint layer that decides what the model is allowed to assert and how you audit it afterwards.
 
 **Interface definition and integration planning.** SysML and DoDAF interface modeling, technical data packages, and the coordination work across software, electrical, and test that turns a model into a shippable integration plan.
-
-## Location
-
-Phoenix, Arizona. I work remotely and hybrid, and have worked distributed across Everett, Newark, Tucson, Roy, and Irvine over the course of my career.

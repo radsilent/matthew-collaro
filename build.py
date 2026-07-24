@@ -25,8 +25,6 @@ PERSON = {
     "name": "Matthew Collaro",
     "alt": "Matt Collaro",
     "role": "Systems Engineer",
-    "locality": "Phoenix",
-    "region": "AZ",
     "github": "https://github.com/radsilent",
     "company": "Vector Stream Systems LLC",
     "company_url": "https://vectorstreamsystems.com/",
@@ -154,12 +152,6 @@ def person_ld(base):
             "SysML architecture modeling, and requirements traceability across "
             "aerospace, defense, and automotive programs."
         ),
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": PERSON["locality"],
-            "addressRegion": PERSON["region"],
-            "addressCountry": "US",
-        },
         "alumniOf": [
             {"@type": "CollegeOrUniversity", "name": "University of South Florida"},
             {"@type": "CollegeOrUniversity", "name": "Georgia Institute of Technology"},
@@ -306,7 +298,7 @@ def render(page, base, body_html):
 
 <footer class="site-footer">
   <div class="wrap">
-    <p><strong>{PERSON['name']}</strong> &mdash; {PERSON['role']}, {PERSON['locality']}, {PERSON['region']}</p>
+    <p><strong>{PERSON['name']}</strong> &mdash; {PERSON['role']}</p>
     <p><a href="{PERSON['github']}" rel="me noopener">GitHub</a> &middot;
        <a href="{PERSON['company_url']}" rel="noopener">{PERSON['company']}</a> &middot;
        <a href="{prefix}feed.xml">RSS</a></p>
