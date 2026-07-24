@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DoDAF and SysML on Defense Programs, Without the Viewpoint Theater — Matthew Collaro</title>
+<meta name="description" content="DoDAF viewpoints get produced because they are deliverable, not because anyone reads them. Making them fall out of a coherent model is what turns compliance into engineering.">
+<meta name="author" content="Matthew Collaro">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://radsilent.github.io/matthew-collaro/articles/dodaf-sysml-defense-integration.html">
+<link rel="alternate" type="application/rss+xml" title="Matthew Collaro — Writing" href="https://radsilent.github.io/matthew-collaro/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Matthew Collaro">
+<meta property="og:title" content="DoDAF and SysML on Defense Programs, Without the Viewpoint Theater — Matthew Collaro">
+<meta property="og:description" content="DoDAF viewpoints get produced because they are deliverable, not because anyone reads them. Making them fall out of a coherent model is what turns compliance into engineering.">
+<meta property="og:url" content="https://radsilent.github.io/matthew-collaro/articles/dodaf-sysml-defense-integration.html">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DoDAF and SysML on Defense Programs, Without the Viewpoint Theater — Matthew Collaro">
+<meta name="twitter:description" content="DoDAF viewpoints get produced because they are deliverable, not because anyone reads them. Making them fall out of a coherent model is what turns compliance into engineering.">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://radsilent.github.io/matthew-collaro/#person",
+      "name": "Matthew Collaro",
+      "givenName": "Matthew",
+      "familyName": "Collaro",
+      "alternateName": "Matt Collaro",
+      "url": "https://radsilent.github.io/matthew-collaro/",
+      "jobTitle": "Systems Engineer and Founder",
+      "description": "Systems engineer specializing in model-based systems engineering, SysML architecture modeling, and requirements traceability across aerospace, defense, and automotive programs.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Phoenix",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of South Florida"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Georgia Institute of Technology"
+        }
+      ],
+      "knowsAbout": [
+        "Model-Based Systems Engineering",
+        "SysML",
+        "Requirements Traceability",
+        "Systems Architecture",
+        "Aerospace Systems Engineering",
+        "Model Context Protocol",
+        "Verification and Validation",
+        "DoDAF"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Vector Stream Systems LLC",
+        "url": "https://vectorstreamsystems.com/"
+      },
+      "sameAs": [
+        "https://github.com/radsilent",
+        "https://vectorstreamsystems.com/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://radsilent.github.io/matthew-collaro/#website",
+      "url": "https://radsilent.github.io/matthew-collaro/",
+      "name": "Matthew Collaro \u2014 Systems Engineer",
+      "publisher": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://radsilent.github.io/matthew-collaro/articles/dodaf-sysml-defense-integration.html#article",
+      "headline": "DoDAF and SysML on Defense Programs, Without the Viewpoint Theater \u2014 Matthew Collaro",
+      "description": "DoDAF viewpoints get produced because they are deliverable, not because anyone reads them. Making them fall out of a coherent model is what turns compliance into engineering.",
+      "url": "https://radsilent.github.io/matthew-collaro/articles/dodaf-sysml-defense-integration.html",
+      "datePublished": "2026-03-06",
+      "dateModified": "2026-03-06",
+      "wordCount": 952,
+      "author": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "publisher": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "isPartOf": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#website"
+      },
+      "mainEntityOfPage": "https://radsilent.github.io/matthew-collaro/articles/dodaf-sysml-defense-integration.html",
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Matthew Collaro</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="../index.html">Profile</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../writing.html">Writing</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <article>
+    <header class="page-head">
+      <h1>DoDAF and SysML on defense programs, without the viewpoint theater</h1>
+      <p class="byline">By <a href="../index.html" rel="author">Matthew Collaro</a> &middot; <time datetime="2026-03-06">March 6, 2026</time> &middot; 952 words</p>
+    </header>
+<p>On defense programs, architecture products are contract deliverables. That fact shapes how they get made, and usually not for the better.</p>
+<p>I developed SysML and DoDAF architecture models at Raytheon supporting integration planning and verification alignment across strategic missile subsystems, and MBSE architecture representations for advanced naval concept systems at Deloitte using OOSEM. The dysfunction is consistent across both, and it is worth naming precisely because it is so easy to reproduce.</p>
+<h2 id="viewpoint-theater">Viewpoint theater</h2>
+<p>The failure mode is producing DoDAF views as artifacts rather than as views.</p>
+<p>A program owes an OV-1, an SV-1, an SV-6, a set of others. Someone is assigned to produce them. They produce them — as drawings, in whatever tool is convenient, each one authored independently. They are delivered, accepted, filed.</p>
+<p>Nobody reads them again. They contradict each other within a revision or two, because there is nothing forcing consistency between an SV-1 drawn in one tool and an SV-6 maintained as a spreadsheet. And when the system changes, they are updated only if a delivery is due.</p>
+<p>This is compliance. It is not architecture, and the engineers producing it generally know that, which is corrosive in its own way.</p>
+<h2 id="views-should-be-projections">Views should be projections</h2>
+<p>The word "view" is doing real work in the DoDAF framework and it gets ignored. A view is a projection of an underlying architecture description. If you author views directly, you have no underlying description — you have a stack of drawings that resemble one.</p>
+<p>The alternative is to build one coherent model and generate the views from it. Then:</p>
+<ul>
+<li>The SV-1 and the SV-6 cannot disagree about which systems exchange which data, because they are rendered from the same elements.</li>
+<li>A change to a resource flow appears in every view that shows it, automatically.</li>
+<li>A missing element is visible as a gap in the model rather than as an inconsistency someone notices across two documents.</li>
+<li>Producing a new view for a new stakeholder is a rendering task, not an authoring project.</li>
+</ul>
+<p>This is the actual argument for MBSE on defense programs, and it is much stronger than the argument usually made, which is about rigor in the abstract. Rigor in the abstract does not survive a schedule review. "We can regenerate the whole architecture product set in an afternoon instead of six weeks" does.</p>
+<h2 id="where-sysml-and-dodaf-meet">Where SysML and DoDAF meet</h2>
+<p>SysML gives you the language. DoDAF gives you the required viewpoints. Mapping between them is where programs burn time, and where a couple of decisions determine whether the rest goes smoothly.</p>
+<p>The mapping that has worked for me:</p>
+<ul>
+<li><strong>Operational activities</strong> map to SysML activities, with operational nodes as blocks in an operational-level structure. Keep this layer genuinely operational — it is about mission, not implementation, and the discipline to keep implementation out of it is what makes it useful later.</li>
+<li><strong>Systems</strong> map to blocks in a separate system-level structure, with an explicit allocation relationship to the operational elements they support. Allocation is the load-bearing relationship in the whole scheme; treat it as a first-class modeled thing rather than a naming convention.</li>
+<li><strong>Resource flows and data exchanges</strong> map to item flows on connectors, typed by shared definitions. If SV-6 content is not derived from typed item flows, it will drift.</li>
+<li><strong>Capability elements</strong> map to a capability taxonomy that requirements trace to, which is what lets you answer capability coverage questions without a manual roll-up.</li>
+</ul>
+<p>The mistake I made early was modeling the views. Building a package per DoDAF product and populating each with the elements that product needs feels organized. It reproduces exactly the problem you were trying to solve, one layer down, and it is harder to unwind than starting over.</p>
+<p>Model the system. Tag elements with the viewpoints they participate in. Generate.</p>
+<h2 id="oosem-is-a-sequencing-discipline">OOSEM is a sequencing discipline</h2>
+<p>The OOSEM work at Deloitte on naval concept systems clarified something for me about method versus notation.</p>
+<p>SysML tells you how to write things down. It does not tell you what to do first. Teams that know SysML and have no method produce models that are syntactically fine and structurally arbitrary — the decomposition reflects whoever modeled which part in what order.</p>
+<p>OOSEM's contribution is sequencing: analyze the operational need, define the system boundary and its external interfaces, elaborate behavior before structure, allocate to a logical architecture, then commit to physical. That order matters because each step constrains the next. Decisions made out of order get made without their constraints, and get revisited expensively.</p>
+<p>For concept-stage work this is especially valuable, because the temptation to jump to a physical architecture is strongest exactly when you know the least. A concept model that commits to boxes in week two has foreclosed the trade space it existed to explore.</p>
+<h2 id="integration-planning-is-the-payoff">Integration planning is the payoff</h2>
+<p>The most concrete return I have seen from doing this properly is integration planning.</p>
+<p>When interfaces are modeled with types, when allocation is explicit, and when verification methods are attached to requirements, the integration sequence is largely derivable. You know which subsystems must be available before which tests, because you know which interfaces those tests exercise. You know what a slip in one subsystem does to the test schedule.</p>
+<p>Producing that by hand, from documents, across software, electrical, and test teams, was a substantial part of what I did at Raytheon in technical data packages and subsystem integration instructions. Most of the effort was reconciling sources that disagreed. From a coherent model, it is a query.</p>
+<p>That is the difference between architecture products as a deliverable and architecture as engineering.</p>
+<p>---</p>
+<p>Related: <a href="interface-control-documents-as-models.html">Interface control documents should be models</a> and <a href="requirements-traceability-breaks.html">Why requirements traceability breaks</a>.</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Matthew Collaro</strong> &mdash; Systems Engineer, Phoenix, AZ</p>
+    <p><a href="https://github.com/radsilent" rel="me noopener">GitHub</a> &middot;
+       <a href="https://vectorstreamsystems.com/" rel="noopener">Vector Stream Systems LLC</a> &middot;
+       <a href="../feed.xml">RSS</a></p>
+    <p class="fine">&copy; 2026 Matthew Collaro. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

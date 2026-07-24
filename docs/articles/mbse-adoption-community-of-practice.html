@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What I Learned Leading an MBSE Community of Practice — Matthew Collaro</title>
+<meta name="description" content="Running a 100-engineer MBSE community of practice at Boeing taught me that modeling adoption fails for organizational reasons, and that the tool is almost never the problem.">
+<meta name="author" content="Matthew Collaro">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://radsilent.github.io/matthew-collaro/articles/mbse-adoption-community-of-practice.html">
+<link rel="alternate" type="application/rss+xml" title="Matthew Collaro — Writing" href="https://radsilent.github.io/matthew-collaro/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Matthew Collaro">
+<meta property="og:title" content="What I Learned Leading an MBSE Community of Practice — Matthew Collaro">
+<meta property="og:description" content="Running a 100-engineer MBSE community of practice at Boeing taught me that modeling adoption fails for organizational reasons, and that the tool is almost never the problem.">
+<meta property="og:url" content="https://radsilent.github.io/matthew-collaro/articles/mbse-adoption-community-of-practice.html">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="What I Learned Leading an MBSE Community of Practice — Matthew Collaro">
+<meta name="twitter:description" content="Running a 100-engineer MBSE community of practice at Boeing taught me that modeling adoption fails for organizational reasons, and that the tool is almost never the problem.">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://radsilent.github.io/matthew-collaro/#person",
+      "name": "Matthew Collaro",
+      "givenName": "Matthew",
+      "familyName": "Collaro",
+      "alternateName": "Matt Collaro",
+      "url": "https://radsilent.github.io/matthew-collaro/",
+      "jobTitle": "Systems Engineer and Founder",
+      "description": "Systems engineer specializing in model-based systems engineering, SysML architecture modeling, and requirements traceability across aerospace, defense, and automotive programs.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Phoenix",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of South Florida"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Georgia Institute of Technology"
+        }
+      ],
+      "knowsAbout": [
+        "Model-Based Systems Engineering",
+        "SysML",
+        "Requirements Traceability",
+        "Systems Architecture",
+        "Aerospace Systems Engineering",
+        "Model Context Protocol",
+        "Verification and Validation",
+        "DoDAF"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Vector Stream Systems LLC",
+        "url": "https://vectorstreamsystems.com/"
+      },
+      "sameAs": [
+        "https://github.com/radsilent",
+        "https://vectorstreamsystems.com/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://radsilent.github.io/matthew-collaro/#website",
+      "url": "https://radsilent.github.io/matthew-collaro/",
+      "name": "Matthew Collaro \u2014 Systems Engineer",
+      "publisher": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://radsilent.github.io/matthew-collaro/articles/mbse-adoption-community-of-practice.html#article",
+      "headline": "What I Learned Leading an MBSE Community of Practice \u2014 Matthew Collaro",
+      "description": "Running a 100-engineer MBSE community of practice at Boeing taught me that modeling adoption fails for organizational reasons, and that the tool is almost never the problem.",
+      "url": "https://radsilent.github.io/matthew-collaro/articles/mbse-adoption-community-of-practice.html",
+      "datePublished": "2026-03-27",
+      "dateModified": "2026-03-27",
+      "wordCount": 975,
+      "author": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "publisher": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "isPartOf": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#website"
+      },
+      "mainEntityOfPage": "https://radsilent.github.io/matthew-collaro/articles/mbse-adoption-community-of-practice.html",
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Matthew Collaro</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="../index.html">Profile</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../writing.html">Writing</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <article>
+    <header class="page-head">
+      <h1>What I learned leading an MBSE community of practice</h1>
+      <p class="byline">By <a href="../index.html" rel="author">Matthew Collaro</a> &middot; <time datetime="2026-03-27">March 27, 2026</time> &middot; 975 words</p>
+    </header>
+<p>I led a community of practice of more than a hundred engineers advancing MBSE adoption within Cabin and Network Systems at Boeing. Some of it worked. The parts that did not taught me more.</p>
+<p>The summary, which I would have disbelieved beforehand: adoption is not a training problem, and it is not a tooling problem. It is a question of whether modeling is on the path to getting work done or beside it.</p>
+<h2 id="the-parallel-work-problem">The parallel-work problem</h2>
+<p>The single largest obstacle is that in early adoption, modeling is additive. An engineer's actual deliverable is a specification, a review package, an interface agreement. If modeling produces those, it is work. If modeling happens and then they also produce those by hand, it is homework.</p>
+<p>Every failed adoption I have seen had engineers maintaining a model and separately maintaining the artifacts the program actually consumed. They did this conscientiously for a while. Then a schedule crunch arrived, they dropped the one that was not on the critical path, and it never came back.</p>
+<p>The fix is unglamorous: make the model produce something the program requires, as early as possible, even if it is small. One generated interface table that goes into the real review package beats a beautiful complete model that nothing depends on. Once a deliverable comes out of the model, the model gets maintained, because now it is on the path.</p>
+<p>I would now sequence an adoption around this exclusively. What artifact can we generate from the model within a month that someone currently makes by hand? Build that first. Model breadth second.</p>
+<h2 id="community-of-practice-as-a-real-mechanism">Community of practice as a real mechanism</h2>
+<p>The community of practice worked better than training did, for a reason I did not anticipate.</p>
+<p>Training teaches SysML. Almost nobody's problem was SysML. Their problem was "how do I represent this specific weird thing in my subsystem," and the answer was usually a convention decision rather than a language question. There is no course for that. There is only someone who has done it before.</p>
+<p>What made the community valuable was that it was where those conventions got made and recorded. Someone would bring a modeling question, three people would have opinions, we would decide, and it would go in the modeling guide. Over time that guide became the actual asset — not because the decisions were profound, but because consistency across a hundred engineers is worth more than any individual decision being optimal.</p>
+<p>The failure mode to watch is the community becoming a status meeting. If people are reporting progress rather than bringing problems, it has stopped working. I found it useful to open with an unresolved modeling question rather than a round-robin.</p>
+<h2 id="who-to-recruit-first">Who to recruit first</h2>
+<p>I initially recruited enthusiasts. This was a mistake, though a pleasant one.</p>
+<p>Enthusiasts adopt regardless. They will model whether you support them or not, and they will produce sophisticated models that other engineers find intimidating and unrepresentative. Their success proves nothing to skeptics, who correctly observe that the enthusiast would have done it anyway.</p>
+<p>The people worth recruiting are the respected pragmatists — engineers with credibility who are not especially interested in modeling but have a problem modeling solves. When that person says the model saved them a week on change impact, it moves the organization. When the enthusiast says it, it confirms a prior.</p>
+<p>They are also harder to recruit and require you to actually deliver value quickly, which is a useful discipline.</p>
+<h2 id="governance-has-to-arrive-before-the-model-gets-big">Governance has to arrive before the model gets big</h2>
+<p>I have written elsewhere about <a href="sysml-model-governance.html">model governance</a>. The adoption-specific point is about timing.</p>
+<p>There is a window early on where establishing conventions costs almost nothing, because the model is small and few people are working in it. Programs skip this because it feels premature and there is pressure to show model content.</p>
+<p>Then the model is large, twenty engineers have developed incompatible local conventions, and harmonizing them is a project nobody has budget for. I have restored degraded architecture models — that was a substantial part of my work at Northrop Grumman — and the cost of retrofitting structure is many times the cost of establishing it early.</p>
+<p>If I had one lever, I would spend it here. Set naming, decomposition, and traceability conventions in the first month, enforce them automatically, and accept looking slow for a few weeks.</p>
+<h2 id="what-skeptics-are-usually-right-about">What skeptics are usually right about</h2>
+<p>Engineers who resist modeling are often objecting to something real, and treating the objection as resistance-to-change wastes the information.</p>
+<p>"This does not represent how the system actually works." Often true, especially in early models built by people learning the domain and the notation simultaneously. The response is to fix the model, and to be glad someone read it closely enough to notice.</p>
+<p>"I can draw this in PowerPoint in ten minutes." Also often true, for a single diagram. The counter is not that PowerPoint is unprofessional. It is change impact — the slide cannot tell you what breaks when the interface moves. If you cannot demonstrate that benefit concretely on their subsystem, they are right and you should improve your case rather than theirs.</p>
+<p>"The tool is painful." Almost always true. Nothing is gained by pretending otherwise, and credibility is lost. Acknowledge it, and be honest that the tradeoff is tool friction now against integration archaeology later.</p>
+<h2 id="the-thing-i-would-tell-myself">The thing I would tell myself</h2>
+<p>Adoption is measured in artifacts that depend on the model, not in model content. A program with a small model that three real deliverables are generated from has adopted MBSE. A program with an enormous model that nothing depends on has adopted a hobby, and it will be cancelled the first time the schedule tightens.</p>
+<p>---</p>
+<p>Related: <a href="sysml-model-governance.html">Model governance for SysML programs that have to certify</a> and <a href="mechanical-engineer-to-mbse.html">From mechanical engineering to MBSE</a>.</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Matthew Collaro</strong> &mdash; Systems Engineer, Phoenix, AZ</p>
+    <p><a href="https://github.com/radsilent" rel="me noopener">GitHub</a> &middot;
+       <a href="https://vectorstreamsystems.com/" rel="noopener">Vector Stream Systems LLC</a> &middot;
+       <a href="../feed.xml">RSS</a></p>
+    <p class="fine">&copy; 2026 Matthew Collaro. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

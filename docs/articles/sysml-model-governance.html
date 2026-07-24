@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model Governance for SysML Programs That Have to Certify — Matthew Collaro</title>
+<meta name="description" content="When the model is the certification artifact rather than a picture of one, governance stops being bureaucracy and becomes the thing that makes the model trustworthy.">
+<meta name="author" content="Matthew Collaro">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://radsilent.github.io/matthew-collaro/articles/sysml-model-governance.html">
+<link rel="alternate" type="application/rss+xml" title="Matthew Collaro — Writing" href="https://radsilent.github.io/matthew-collaro/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Matthew Collaro">
+<meta property="og:title" content="Model Governance for SysML Programs That Have to Certify — Matthew Collaro">
+<meta property="og:description" content="When the model is the certification artifact rather than a picture of one, governance stops being bureaucracy and becomes the thing that makes the model trustworthy.">
+<meta property="og:url" content="https://radsilent.github.io/matthew-collaro/articles/sysml-model-governance.html">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Model Governance for SysML Programs That Have to Certify — Matthew Collaro">
+<meta name="twitter:description" content="When the model is the certification artifact rather than a picture of one, governance stops being bureaucracy and becomes the thing that makes the model trustworthy.">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://radsilent.github.io/matthew-collaro/#person",
+      "name": "Matthew Collaro",
+      "givenName": "Matthew",
+      "familyName": "Collaro",
+      "alternateName": "Matt Collaro",
+      "url": "https://radsilent.github.io/matthew-collaro/",
+      "jobTitle": "Systems Engineer and Founder",
+      "description": "Systems engineer specializing in model-based systems engineering, SysML architecture modeling, and requirements traceability across aerospace, defense, and automotive programs.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Phoenix",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of South Florida"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Georgia Institute of Technology"
+        }
+      ],
+      "knowsAbout": [
+        "Model-Based Systems Engineering",
+        "SysML",
+        "Requirements Traceability",
+        "Systems Architecture",
+        "Aerospace Systems Engineering",
+        "Model Context Protocol",
+        "Verification and Validation",
+        "DoDAF"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Vector Stream Systems LLC",
+        "url": "https://vectorstreamsystems.com/"
+      },
+      "sameAs": [
+        "https://github.com/radsilent",
+        "https://vectorstreamsystems.com/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://radsilent.github.io/matthew-collaro/#website",
+      "url": "https://radsilent.github.io/matthew-collaro/",
+      "name": "Matthew Collaro \u2014 Systems Engineer",
+      "publisher": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://radsilent.github.io/matthew-collaro/articles/sysml-model-governance.html#article",
+      "headline": "Model Governance for SysML Programs That Have to Certify \u2014 Matthew Collaro",
+      "description": "When the model is the certification artifact rather than a picture of one, governance stops being bureaucracy and becomes the thing that makes the model trustworthy.",
+      "url": "https://radsilent.github.io/matthew-collaro/articles/sysml-model-governance.html",
+      "datePublished": "2026-06-28",
+      "dateModified": "2026-06-28",
+      "wordCount": 973,
+      "author": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "publisher": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "isPartOf": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#website"
+      },
+      "mainEntityOfPage": "https://radsilent.github.io/matthew-collaro/articles/sysml-model-governance.html",
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Matthew Collaro</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="../index.html">Profile</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../writing.html">Writing</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <article>
+    <header class="page-head">
+      <h1>Model governance for SysML programs that have to certify</h1>
+      <p class="byline">By <a href="../index.html" rel="author">Matthew Collaro</a> &middot; <time datetime="2026-06-28">June 28, 2026</time> &middot; 973 words</p>
+    </header>
+<p>There is a moment on every MBSE program where someone asks whether the model is authoritative. The answer determines everything that follows, and most programs answer it by accident.</p>
+<p>If the model is authoritative, it is a controlled artifact and changes to it are engineering changes. If it is not, it is documentation, and documentation drifts. There is no stable middle position, though many programs try to occupy one — the model is authoritative in the sense that everyone agrees it should be, and non-authoritative in the sense that nobody gates anything on it.</p>
+<h2 id="what-governance-actually-means-here">What governance actually means here</h2>
+<p>Model governance gets a bad reputation because it is usually introduced as process: naming conventions, review checklists, a style guide nobody reads. That is not governance. That is formatting.</p>
+<p>Governance is the set of answers to four questions:</p>
+<ol>
+<li><strong>Who is allowed to change what?</strong> Not "who has write access," which is usually everybody. Which engineer owns which part of the model such that a change without their involvement is a defect.</li>
+<li><strong>What must be true before a change lands?</strong> The conditions a model change has to satisfy to be accepted — well-formedness, traceability preservation, constraint satisfaction, whatever the program requires.</li>
+<li><strong>How is a change recorded?</strong> Enough that in three years someone can reconstruct why a block was decomposed the way it was.</li>
+<li><strong>What happens when a rule is violated?</strong> If the answer is "nothing," the rule does not exist.</li>
+</ol>
+<p>Every program I have worked on could answer the first question informally and the fourth not at all.</p>
+<h2 id="ownership-boundaries-have-to-match-the-architecture">Ownership boundaries have to match the architecture</h2>
+<p>The most common governance failure is drawing ownership boundaries around organizations instead of around interfaces.</p>
+<p>If the model is partitioned by team — cabin systems owns this package, network systems owns that one — then every interface between them sits on a boundary with two owners or none. In practice it is none. Interfaces are where integration problems live, and putting them in ownership no-man's-land is how you get a model that looks complete and integrates badly.</p>
+<p>Partitioning by interface is harder to set up and much better. Every interface gets a single owning engineer, who is responsible for its definition being precise enough that both sides can implement against it independently. Whether that engineer sits in the cabin org or the network org matters less than whether they exist.</p>
+<p>At Boeing, doing this on network and IoT system models across integrated product teams spanning roughly 300 engineers was the difference between revisions that converged and revisions that ping-ponged.</p>
+<h2 id="validation-has-to-be-automated-or-it-does-not-happen">Validation has to be automated or it does not happen</h2>
+<p>Manual model review does not scale, and more importantly it does not catch the things automation catches. A reviewer looking at a decomposition will notice that it seems wrong. They will not notice that a port on a nested block has no matching connector three levels up, because nobody holds a model that large in their head.</p>
+<p>The rules worth automating are the boring ones:</p>
+<ul>
+<li>Every requirement has at least one satisfying element, and that element exists.</li>
+<li>Every interface has both ends defined and typed compatibly.</li>
+<li>Every port is connected, or explicitly marked as intentionally unconnected with a rationale.</li>
+<li>No element references a deleted element.</li>
+<li>Naming and identifier rules hold, so that downstream tooling can rely on them.</li>
+<li>Verification methods are assigned for every requirement in scope.</li>
+</ul>
+<p>None of these require judgment. All of them are violated regularly on large models. Running them on every change turns a class of defect that used to be found at review into a class of defect that cannot be committed.</p>
+<p>The rules requiring judgment — is this the right decomposition, is this requirement well-formed as a requirement — still need humans. Automating the mechanical checks is what frees reviewers to spend attention on the judgment ones instead of hunting for dangling ports.</p>
+<h2 id="certification-changes-the-stakes-not-the-method">Certification changes the stakes, not the method</h2>
+<p>When the model feeds certification artifacts, two additional properties matter.</p>
+<p><strong>Reproducibility.</strong> You must be able to regenerate the artifact from a specified model state and get the same result. This means model versions have to be identifiable and retrievable, and generation has to be deterministic. If your hazard analysis is produced by a tool that samples the model at whatever state it happened to be in, you cannot defend it.</p>
+<p><strong>Provenance.</strong> For any statement in a certification artifact, you need to identify the model elements it was derived from. Not approximately — specifically. When a regulator asks why a particular failure condition was classified the way it was, "the tool generated it" is not an answer.</p>
+<p>Both are engineering properties of the pipeline, not process documents. If you build model-based safety and hazard assessment tooling — which I did at Boeing — these are the requirements that constrain the design most, and they are much cheaper to build in than to retrofit.</p>
+<h2 id="the-part-that-decides-whether-it-works">The part that decides whether it works</h2>
+<p>Governance succeeds when violating it is harder than complying with it, and fails otherwise.</p>
+<p>If the traceability check runs in CI and blocks the merge, engineers maintain traceability. If it runs as a monthly report that goes to a manager, they do not, and no amount of emphasis in the kickoff deck changes that. This is not a statement about engineers. It is a statement about where friction sits relative to incentive.</p>
+<p>The corollary is that every governance rule you cannot enforce automatically is a rule you should think hard about keeping. An unenforced rule is worse than no rule, because it creates the impression of control while providing none, and it trains people to treat the rule set as advisory.</p>
+<p>Write down fewer rules. Enforce the ones you write.</p>
+<p>---</p>
+<p>Related: <a href="requirements-traceability-breaks.html">Why requirements traceability breaks</a> and <a href="guardrails-for-ai-generated-engineering-artifacts.html">Guardrails for AI-generated engineering artifacts</a>.</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Matthew Collaro</strong> &mdash; Systems Engineer, Phoenix, AZ</p>
+    <p><a href="https://github.com/radsilent" rel="me noopener">GitHub</a> &middot;
+       <a href="https://vectorstreamsystems.com/" rel="noopener">Vector Stream Systems LLC</a> &middot;
+       <a href="../feed.xml">RSS</a></p>
+    <p class="fine">&copy; 2026 Matthew Collaro. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

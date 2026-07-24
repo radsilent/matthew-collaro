@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why Requirements Traceability Breaks, and What Actually Fixes It — Matthew Collaro</title>
+<meta name="description" content="Traceability decays on real programs for structural reasons, not because engineers are lazy. A look at the actual failure modes and what a fix has to do.">
+<meta name="author" content="Matthew Collaro">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://radsilent.github.io/matthew-collaro/articles/requirements-traceability-breaks.html">
+<link rel="alternate" type="application/rss+xml" title="Matthew Collaro — Writing" href="https://radsilent.github.io/matthew-collaro/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Matthew Collaro">
+<meta property="og:title" content="Why Requirements Traceability Breaks, and What Actually Fixes It — Matthew Collaro">
+<meta property="og:description" content="Traceability decays on real programs for structural reasons, not because engineers are lazy. A look at the actual failure modes and what a fix has to do.">
+<meta property="og:url" content="https://radsilent.github.io/matthew-collaro/articles/requirements-traceability-breaks.html">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Why Requirements Traceability Breaks, and What Actually Fixes It — Matthew Collaro">
+<meta name="twitter:description" content="Traceability decays on real programs for structural reasons, not because engineers are lazy. A look at the actual failure modes and what a fix has to do.">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://radsilent.github.io/matthew-collaro/#person",
+      "name": "Matthew Collaro",
+      "givenName": "Matthew",
+      "familyName": "Collaro",
+      "alternateName": "Matt Collaro",
+      "url": "https://radsilent.github.io/matthew-collaro/",
+      "jobTitle": "Systems Engineer and Founder",
+      "description": "Systems engineer specializing in model-based systems engineering, SysML architecture modeling, and requirements traceability across aerospace, defense, and automotive programs.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Phoenix",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of South Florida"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Georgia Institute of Technology"
+        }
+      ],
+      "knowsAbout": [
+        "Model-Based Systems Engineering",
+        "SysML",
+        "Requirements Traceability",
+        "Systems Architecture",
+        "Aerospace Systems Engineering",
+        "Model Context Protocol",
+        "Verification and Validation",
+        "DoDAF"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Vector Stream Systems LLC",
+        "url": "https://vectorstreamsystems.com/"
+      },
+      "sameAs": [
+        "https://github.com/radsilent",
+        "https://vectorstreamsystems.com/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://radsilent.github.io/matthew-collaro/#website",
+      "url": "https://radsilent.github.io/matthew-collaro/",
+      "name": "Matthew Collaro \u2014 Systems Engineer",
+      "publisher": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://radsilent.github.io/matthew-collaro/articles/requirements-traceability-breaks.html#article",
+      "headline": "Why Requirements Traceability Breaks, and What Actually Fixes It \u2014 Matthew Collaro",
+      "description": "Traceability decays on real programs for structural reasons, not because engineers are lazy. A look at the actual failure modes and what a fix has to do.",
+      "url": "https://radsilent.github.io/matthew-collaro/articles/requirements-traceability-breaks.html",
+      "datePublished": "2026-07-14",
+      "dateModified": "2026-07-14",
+      "wordCount": 928,
+      "author": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "publisher": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "isPartOf": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#website"
+      },
+      "mainEntityOfPage": "https://radsilent.github.io/matthew-collaro/articles/requirements-traceability-breaks.html",
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Matthew Collaro</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="../index.html">Profile</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../writing.html">Writing</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <article>
+    <header class="page-head">
+      <h1>Why requirements traceability breaks, and what actually fixes it</h1>
+      <p class="byline">By <a href="../index.html" rel="author">Matthew Collaro</a> &middot; <time datetime="2026-07-14">July 14, 2026</time> &middot; 928 words</p>
+    </header>
+<p>Every program I have worked on had a traceability matrix. Most of them had one that was wrong.</p>
+<p>This is not a story about undisciplined engineers. The people maintaining those matrices were conscientious, and on several programs they were the most conscientious people in the building. Traceability decays for structural reasons, and if you do not address the structure, you get the same outcome with better people and more meetings.</p>
+<h2 id="the-failure-modes">The failure modes</h2>
+<p><strong>Traceability is maintained as a separate artifact.</strong> The requirements live in DOORS. The architecture lives in Cameo. The test cases live somewhere else, frequently a spreadsheet with a name like <code>Verification_Matrix_v14_FINAL_rev2.xlsx</code>. The trace links live in a fourth place that references the other three by identifier.</p>
+<p>The moment those identifiers can change independently, the links are guesses. Someone renames a requirement, someone refactors a block in the model, and the link still resolves to a string that no longer means what it meant. Nothing errors. The matrix still looks complete. It is now lying to you, and it will keep lying quietly until an audit or a test failure surfaces it.</p>
+<p><strong>Links are created at the wrong time.</strong> Trace links get created during a push before a milestone, by whoever has capacity, working from documents rather than from the design conversation. That person is reconstructing intent they were not present for. They will produce links that are defensible in review and disconnected from why the requirement exists.</p>
+<p>The link that matters is the one made by the engineer who decided that this component satisfies that requirement, at the moment they decided it. Any later reconstruction is archaeology.</p>
+<p><strong>There is no cost to a missing link.</strong> In most toolchains you can commit a model change that orphans six requirements and nothing happens. No build fails. No reviewer is notified. The cost arrives months later, distributed across people who did not cause it. Systems where the cost of breakage is deferred and diffuse reliably accumulate breakage.</p>
+<p><strong>Coverage is measured, correctness is not.</strong> Programs report traceability coverage — the percentage of requirements with at least one downstream link. This is the metric that is easy to compute, so it is the metric that gets reported, so it is the metric that gets gamed. You can reach 100% coverage with links that are individually meaningless. I have seen requirements traced to a component whose only relationship to the requirement was that both mentioned the word "power."</p>
+<p>Coverage tells you a link exists. It tells you nothing about whether the link is true.</p>
+<h2 id="what-a-fix-has-to-do">What a fix has to do</h2>
+<p><strong>Make the link a first-class object, not a reference.</strong> If a trace link is a row in a spreadsheet pointing at two identifiers, it will rot. If it is an edge in a graph where both endpoints are the actual objects, then renaming a requirement moves the edge with it, and deleting a component either fails or explicitly orphans what depended on it. This is the same reason you use foreign keys instead of storing a name and hoping.</p>
+<p>This is not a tooling preference. It is the difference between a relationship the system knows about and a relationship the system merely records.</p>
+<p><strong>Make breakage immediate and local.</strong> The engineer who orphans a requirement should find out during their change, not during a review board six weeks later. This means validation has to run where the work happens — in the model, on commit, in CI — and it has to name the person who caused it while they still have the context to fix it in ten minutes.</p>
+<p>Programs resist this because it feels like friction. It is friction. It is a small amount of friction now instead of a large amount of archaeology later, and the exchange rate is extremely favorable.</p>
+<p><strong>Capture rationale with the link.</strong> A trace link with no rationale is a claim with no argument. Ten minutes of typing when the decision is made saves an afternoon of reconstruction when someone asks why in eighteen months. The engineers who resist this most are usually the ones who will be asked.</p>
+<p><strong>Measure change impact, not coverage.</strong> The question worth answering is not "what fraction of requirements have links." It is "if I change this interface, what needs review." A traceability structure that can answer the second question accurately is useful even at partial coverage. One that reports 100% coverage but cannot answer it is theater.</p>
+<p>I would rather have 60% coverage I trust than 100% I do not, and I have worked with both.</p>
+<h2 id="the-part-nobody-wants-to-hear">The part nobody wants to hear</h2>
+<p>Most traceability problems are ownership problems dressed as tooling problems.</p>
+<p>When an interface has no clear owner, its requirements do not get traced properly, because tracing forces you to state precisely who is responsible for satisfying what. Ambiguity is comfortable. Formal traceability removes the comfort, which is exactly why it gets deprioritized, and why the deprioritization is always justified on schedule grounds.</p>
+<p>If you introduce rigorous traceability to a program with unresolved ownership boundaries, the first thing that happens is not better traceability. It is a series of uncomfortable conversations about who owns what. Those conversations are the actual deliverable. The links are a byproduct.</p>
+<p>I have come to think of a traceability initiative as a diagnostic instrument. If it goes smoothly, the program had clear ownership. If it stalls, you have found something more important than a stalled traceability initiative.</p>
+<p>---</p>
+<p>Related: <a href="sysml-model-governance.html">Model governance for SysML programs that have to certify</a> and <a href="interface-control-documents-as-models.html">Interface control documents should be models</a>.</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Matthew Collaro</strong> &mdash; Systems Engineer, Phoenix, AZ</p>
+    <p><a href="https://github.com/radsilent" rel="me noopener">GitHub</a> &middot;
+       <a href="https://vectorstreamsystems.com/" rel="noopener">Vector Stream Systems LLC</a> &middot;
+       <a href="../feed.xml">RSS</a></p>
+    <p class="fine">&copy; 2026 Matthew Collaro. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

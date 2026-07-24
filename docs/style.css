@@ -1,0 +1,195 @@
+/* Matthew Collaro — personal site
+   Single stylesheet, no external requests, light + dark. */
+
+:root {
+  --bg: #ffffff;
+  --surface: #f6f7f9;
+  --text: #16191d;
+  --muted: #5a626d;
+  --line: #e2e5ea;
+  --accent: #12604a;
+  --accent-soft: #e7f2ee;
+  --max: 44rem;
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --surface: #171a20;
+    --text: #e7e9ec;
+    --muted: #9aa3ae;
+    --line: #262b33;
+    --accent: #5ec9a5;
+    --accent-soft: #14241f;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 10;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+}
+
+/* Header ---------------------------------------------------------------- */
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-block: 0.9rem;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.02rem;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.site-header nav a:hover,
+.site-header nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
+/* Content --------------------------------------------------------------- */
+
+main { padding-block: 2.75rem 3.5rem; }
+
+.page-head { margin-bottom: 1.75rem; }
+
+h1 {
+  font-size: clamp(1.85rem, 4.5vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.35rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin: 2.5rem 0 0.75rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--line);
+}
+
+h3 {
+  font-size: 1.12rem;
+  margin: 1.9rem 0 0.5rem;
+}
+
+h4 {
+  font-size: 1rem;
+  margin: 1.5rem 0 0.4rem;
+  color: var(--muted);
+}
+
+p { margin: 0 0 1.05rem; }
+
+a { color: var(--accent); }
+a:hover { text-decoration-thickness: 2px; }
+
+.byline {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+ul, ol { padding-left: 1.3rem; margin: 0 0 1.05rem; }
+li { margin-bottom: 0.45rem; }
+
+blockquote {
+  margin: 1.4rem 0;
+  padding: 0.15rem 0 0.15rem 1.1rem;
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+
+strong { font-weight: 650; }
+
+/* Footer ---------------------------------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  padding-block: 1.75rem 2.25rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.site-footer p { margin: 0 0 0.35rem; }
+.site-footer .fine { font-size: 0.82rem; opacity: 0.75; margin-top: 0.6rem; }
+
+/* Print ----------------------------------------------------------------- */
+
+@media print {
+  .site-header, .site-footer, .skip { display: none; }
+  body { font-size: 11pt; color: #000; background: #fff; }
+  a { color: #000; text-decoration: none; }
+  h2 { border-top: none; }
+}

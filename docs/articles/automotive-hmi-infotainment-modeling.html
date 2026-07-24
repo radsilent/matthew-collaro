@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modeling Automotive HMI and Infotainment Integration — Matthew Collaro</title>
+<meta name="description" content="Notification timing, media routing, and vehicle state synchronization defects are integration problems disguised as feature bugs. Behavioral modeling is how you find out which is which.">
+<meta name="author" content="Matthew Collaro">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://radsilent.github.io/matthew-collaro/articles/automotive-hmi-infotainment-modeling.html">
+<link rel="alternate" type="application/rss+xml" title="Matthew Collaro — Writing" href="https://radsilent.github.io/matthew-collaro/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Matthew Collaro">
+<meta property="og:title" content="Modeling Automotive HMI and Infotainment Integration — Matthew Collaro">
+<meta property="og:description" content="Notification timing, media routing, and vehicle state synchronization defects are integration problems disguised as feature bugs. Behavioral modeling is how you find out which is which.">
+<meta property="og:url" content="https://radsilent.github.io/matthew-collaro/articles/automotive-hmi-infotainment-modeling.html">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Modeling Automotive HMI and Infotainment Integration — Matthew Collaro">
+<meta name="twitter:description" content="Notification timing, media routing, and vehicle state synchronization defects are integration problems disguised as feature bugs. Behavioral modeling is how you find out which is which.">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://radsilent.github.io/matthew-collaro/#person",
+      "name": "Matthew Collaro",
+      "givenName": "Matthew",
+      "familyName": "Collaro",
+      "alternateName": "Matt Collaro",
+      "url": "https://radsilent.github.io/matthew-collaro/",
+      "jobTitle": "Systems Engineer and Founder",
+      "description": "Systems engineer specializing in model-based systems engineering, SysML architecture modeling, and requirements traceability across aerospace, defense, and automotive programs.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Phoenix",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of South Florida"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Georgia Institute of Technology"
+        }
+      ],
+      "knowsAbout": [
+        "Model-Based Systems Engineering",
+        "SysML",
+        "Requirements Traceability",
+        "Systems Architecture",
+        "Aerospace Systems Engineering",
+        "Model Context Protocol",
+        "Verification and Validation",
+        "DoDAF"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Vector Stream Systems LLC",
+        "url": "https://vectorstreamsystems.com/"
+      },
+      "sameAs": [
+        "https://github.com/radsilent",
+        "https://vectorstreamsystems.com/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://radsilent.github.io/matthew-collaro/#website",
+      "url": "https://radsilent.github.io/matthew-collaro/",
+      "name": "Matthew Collaro \u2014 Systems Engineer",
+      "publisher": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://radsilent.github.io/matthew-collaro/articles/automotive-hmi-infotainment-modeling.html#article",
+      "headline": "Modeling Automotive HMI and Infotainment Integration \u2014 Matthew Collaro",
+      "description": "Notification timing, media routing, and vehicle state synchronization defects are integration problems disguised as feature bugs. Behavioral modeling is how you find out which is which.",
+      "url": "https://radsilent.github.io/matthew-collaro/articles/automotive-hmi-infotainment-modeling.html",
+      "datePublished": "2026-02-13",
+      "dateModified": "2026-02-13",
+      "wordCount": 984,
+      "author": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "publisher": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "isPartOf": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#website"
+      },
+      "mainEntityOfPage": "https://radsilent.github.io/matthew-collaro/articles/automotive-hmi-infotainment-modeling.html",
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Matthew Collaro</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="../index.html">Profile</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../writing.html">Writing</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <article>
+    <header class="page-head">
+      <h1>Modeling automotive HMI and infotainment integration</h1>
+      <p class="byline">By <a href="../index.html" rel="author">Matthew Collaro</a> &middot; <time datetime="2026-02-13">February 13, 2026</time> &middot; 984 words</p>
+    </header>
+<p>A driver gets a navigation prompt while a phone call is connecting and music is ducking. Three subsystems own pieces of that moment and none owns the moment itself.</p>
+<p>This is the category of problem I work on at Lucid: cross-domain integration of infotainment and driver feedback systems on autonomy-enabled builds. Notification timing, media routing, vehicle state synchronization. They arrive as feature bugs. They are almost never feature bugs.</p>
+<h2 id="why-these-defects-are-structurally-hard">Why these defects are structurally hard</h2>
+<p>Coming from aircraft, the thing that struck me about vehicle infotainment is how much of the behavior is <em>emergent across domains that were specified independently</em>.</p>
+<p>The audio path involves an infotainment controller, an amplifier, possibly a body module for chimes, and increasingly an autonomous compute domain that wants to produce driver feedback of its own. Each has a specification. Each specification is correct. The interaction between them is specified nowhere, because no single document has scope over it.</p>
+<p>So the defect shows up as: under this specific combination of vehicle state, active media source, and pending notification, the wrong thing is audible, or the right thing is audible half a second late, or the chime plays and the navigation prompt is suppressed when it should be the reverse.</p>
+<p>Every team looks at their own subsystem and finds it behaving to spec. They are all correct. The specifications are incomplete in a region none of them own.</p>
+<h2 id="behavioral-models-over-structural-ones">Behavioral models over structural ones</h2>
+<p>Structural modeling — which component connects to which, what signals cross the boundary — is necessary and does not catch these. The connections are all present. The signals all exist. The problem is <em>sequencing and arbitration</em>, which structure does not express.</p>
+<p>What has been useful is behavioral modeling of the interaction itself: state machines for the arbitration logic, sequence diagrams for the cross-domain flows, and explicit modeling of priority relationships between audio sources and notification classes.</p>
+<p>The exercise of building these is where most of the value is, before anyone runs anything. You sit down to model what happens when a navigation prompt arrives during an active call with media ducked and an autonomy alert pending, and you discover that nobody knows. Not that it is wrong — that it is undefined. Three teams have three reasonable assumptions and no forum has ever put them in the same room.</p>
+<p>That discovery is the deliverable. The model is how you force the question into a form that cannot be deferred.</p>
+<h2 id="signal-ownership-and-functional-ownership-are-different">Signal ownership and functional ownership are different</h2>
+<p>The clarifying distinction I keep returning to: knowing which module <em>emits</em> a signal is not knowing which function <em>owns</em> the behavior.</p>
+<p>A chime is emitted by a body module. The decision that a chime is appropriate right now might belong to a driver-attention function that lives in a different domain entirely. If you model only emission, you will attribute the behavior to the body module, and you will route the defect to a team that can only change when the chime plays, not whether it should have.</p>
+<p>Modeling functional ownership separately from signal emission — and making the allocation between them explicit — changes where defects get routed and what the fix looks like. It also tends to reveal that some functions have no owner, which is uncomfortable and worth knowing during platform bring-up rather than during a launch readiness review.</p>
+<h2 id="timing-has-to-be-in-the-model">Timing has to be in the model</h2>
+<p>Notification timing defects are the ones most resistant to structural analysis, because the structure is right and the timing is wrong.</p>
+<p>If the model does not express latency budgets, message periodicity, and ordering constraints, then a model review cannot catch a timing defect and you are relying entirely on the bench. Putting timing in the model is more work and it converts a class of bench findings into a class of review findings.</p>
+<p>Practically this means annotating flows with expected latency, marking which sequences have ordering requirements versus which are genuinely concurrent, and being explicit about what happens when a budget is exceeded — because the degraded behavior is a design decision, and if it is not modeled it will be an accident.</p>
+<h2 id="autonomy-raises-the-stakes">Autonomy raises the stakes</h2>
+<p>The autonomy compute domain changes the character of this work. It produces driver feedback that is not entertainment and not convenience — it is safety-relevant communication about vehicle state and intent.</p>
+<p>That feedback has to arbitrate against media and notifications that were designed under the assumption that the worst case of getting it wrong was an annoyed driver. Once one of the contenders is telling the driver something about the vehicle's behavior, the arbitration policy is a safety-relevant design decision.</p>
+<p>Which means it needs to be specified, modeled, traced to requirements, and verified — rather than being emergent from three independently reasonable subsystem specifications. This is where the aerospace habits transfer cleanly. The question "what is the worst thing that happens if this is late, suppressed, or wrong" is a normal question in aircraft systems, and it is the right question here.</p>
+<h2 id="what-transfers-from-aerospace-and-what-does-not">What transfers from aerospace, and what does not</h2>
+<p><strong>Transfers:</strong> interface discipline, the instinct to model failure and degraded behavior rather than only nominal, the assumption that anything unspecified will eventually be resolved unfavorably, and the practice of tracing behavior to a requirement someone owns.</p>
+<p><strong>Does not transfer:</strong> the pace, and the tolerance for process. Vehicle programs iterate faster than aircraft programs by a wide margin, and a modeling approach that requires a change board to update a state machine will be routed around within a week. The modeling has to be light enough to keep up with the build cadence.</p>
+<p>The version that works is narrow and deep: model the cross-domain interactions that are genuinely emergent, at the fidelity needed to answer arbitration and timing questions, and do not attempt to model the entire vehicle. Breadth is what kills these efforts.</p>
+<p>---</p>
+<p>Related: <a href="interface-control-documents-as-models.html">Interface control documents should be models</a>.</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Matthew Collaro</strong> &mdash; Systems Engineer, Phoenix, AZ</p>
+    <p><a href="https://github.com/radsilent" rel="me noopener">GitHub</a> &middot;
+       <a href="https://vectorstreamsystems.com/" rel="noopener">Vector Stream Systems LLC</a> &middot;
+       <a href="../feed.xml">RSS</a></p>
+    <p class="fine">&copy; 2026 Matthew Collaro. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

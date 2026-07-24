@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Matthew Collaro</title>
+<meta name="description" content="Engineering projects by Matthew Collaro, including VectorMBE, the Model Context Protocol server for MBSE toolchains, and an Isaac ROS perception kit for edge hardware.">
+<meta name="author" content="Matthew Collaro">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://radsilent.github.io/matthew-collaro/projects.html">
+<link rel="alternate" type="application/rss+xml" title="Matthew Collaro — Writing" href="https://radsilent.github.io/matthew-collaro/feed.xml">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Matthew Collaro">
+<meta property="og:title" content="Projects — Matthew Collaro">
+<meta property="og:description" content="Engineering projects by Matthew Collaro, including VectorMBE, the Model Context Protocol server for MBSE toolchains, and an Isaac ROS perception kit for edge hardware.">
+<meta property="og:url" content="https://radsilent.github.io/matthew-collaro/projects.html">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Projects — Matthew Collaro">
+<meta name="twitter:description" content="Engineering projects by Matthew Collaro, including VectorMBE, the Model Context Protocol server for MBSE toolchains, and an Isaac ROS perception kit for edge hardware.">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://radsilent.github.io/matthew-collaro/#person",
+      "name": "Matthew Collaro",
+      "givenName": "Matthew",
+      "familyName": "Collaro",
+      "alternateName": "Matt Collaro",
+      "url": "https://radsilent.github.io/matthew-collaro/",
+      "jobTitle": "Systems Engineer and Founder",
+      "description": "Systems engineer specializing in model-based systems engineering, SysML architecture modeling, and requirements traceability across aerospace, defense, and automotive programs.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Phoenix",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of South Florida"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Georgia Institute of Technology"
+        }
+      ],
+      "knowsAbout": [
+        "Model-Based Systems Engineering",
+        "SysML",
+        "Requirements Traceability",
+        "Systems Architecture",
+        "Aerospace Systems Engineering",
+        "Model Context Protocol",
+        "Verification and Validation",
+        "DoDAF"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Vector Stream Systems LLC",
+        "url": "https://vectorstreamsystems.com/"
+      },
+      "sameAs": [
+        "https://github.com/radsilent",
+        "https://vectorstreamsystems.com/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://radsilent.github.io/matthew-collaro/#website",
+      "url": "https://radsilent.github.io/matthew-collaro/",
+      "name": "Matthew Collaro \u2014 Systems Engineer",
+      "publisher": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://radsilent.github.io/matthew-collaro/projects.html#webpage",
+      "url": "https://radsilent.github.io/matthew-collaro/projects.html",
+      "name": "Projects \u2014 Matthew Collaro",
+      "description": "Engineering projects by Matthew Collaro, including VectorMBE, the Model Context Protocol server for MBSE toolchains, and an Isaac ROS perception kit for edge hardware.",
+      "isPartOf": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#website"
+      },
+      "about": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "mainEntity": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Matthew Collaro</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Profile</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="writing.html">Writing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <article>
+    <header class="page-head">
+      <h1>Projects</h1>
+    </header>
+<p>Things I have built, in and out of working hours.</p>
+<h2 id="vectormbe">VectorMBE</h2>
+<p>A governed engineering intelligence platform for synchronizing requirements, model context, semantic relationships, and system constraints across MBSE workflows. It is the product side of <a href="https://vectorstreamsystems.com/">Vector Stream Systems LLC</a>, and the subject of a pending U.S. provisional patent application.</p>
+<p>The core problem it addresses is one I hit repeatedly on aircraft and missile programs: requirements, architecture models, and verification evidence live in separate tools with no enforced relationship between them, so they drift. By the time a review board notices, months of design work are committed.</p>
+<p>VectorMBE connects those tools into a single graph with formal traceability, hybrid retrieval over that graph, and change propagation. When an interface definition changes, the system identifies every downstream requirement that needs review before the change lands rather than after.</p>
+<p>Technically it is a hybrid: an ontology layer for the parts of the domain that benefit from formal semantics, and a plain directed graph for the parts that benefit from being fast and inspectable. It runs on Rust and Python in Docker, with CLI and API surfaces, and exposes context to AI tooling through the Model Context Protocol so that agents read structured, versioned system state through a controlled interface instead of scraping documents.</p>
+<h2 id="vectormbe-mcp">vectormbe-mcp</h2>
+<p>A Model Context Protocol server that gives AI assistants governed access to an MBSE model. Rather than pointing a language model at a pile of exported documents, it exposes typed operations — query requirements, traverse traceability relationships, check constraint satisfaction, retrieve related design context — so that what the model sees is scoped, current, and attributable.</p>
+<p>The design principle is that an agent should not be able to assert something about the system that the model cannot back up. Retrieval is grounded in the graph, and validation runs against rules the agent does not control.</p>
+<h2 id="isaac-ros-perception-kit">Isaac ROS Perception Kit</h2>
+<p>A reproducible perception pipeline built on NVIDIA Isaac ROS, pairing the Synthetica DETR detection model with Isaac Sim for synthetic data generation, targeted at modest edge hardware rather than a datacenter GPU.</p>
+<p>The interesting constraint was fitting a real-time detection and tracking stack onto a small-form-factor workstation with an 8 GB card, which forces honest decisions about model selection, batch sizing, and where to spend memory. Source is on <a href="https://github.com/radsilent">GitHub</a>.</p>
+<h2 id="model-based-safety-and-hazard-assessment-tooling">Model-based safety and hazard assessment tooling</h2>
+<p>At Boeing I developed tooling that generated safety and hazard assessment artifacts directly from system models for certification-oriented analysis. The value was not the automation itself but the coupling: when the architecture model changed, the hazard analysis was no longer silently stale.</p>
+<p>That idea — that safety artifacts should be derived from the model rather than maintained alongside it — carried directly into the safety assessment work in VectorMBE.</p>
+<h2 id="aircraft-network-architecture-studies">Aircraft network architecture studies</h2>
+<p>Also at Boeing: conceptual work on distributed network architecture enhancements across the 777 and 787 platforms, aimed at safety, redundancy, and cyber resilience, alongside model-based Interface Control Diagrams used to identify networked system vulnerabilities during threat analysis.</p>
+<p>Modeling interfaces formally turns out to be one of the more effective ways to find security problems, because an interface you cannot draw precisely is usually one nobody fully owns.</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Matthew Collaro</strong> &mdash; Systems Engineer, Phoenix, AZ</p>
+    <p><a href="https://github.com/radsilent" rel="me noopener">GitHub</a> &middot;
+       <a href="https://vectorstreamsystems.com/" rel="noopener">Vector Stream Systems LLC</a> &middot;
+       <a href="feed.xml">RSS</a></p>
+    <p class="fine">&copy; 2026 Matthew Collaro. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

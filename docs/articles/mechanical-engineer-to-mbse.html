@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From the Factory Floor to Systems Architecture — Matthew Collaro</title>
+<meta name="description" content="How writing overhaul instructions for flight control actuators turned out to be useful preparation for architecture modeling, and what I would tell someone making the same move.">
+<meta name="author" content="Matthew Collaro">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://radsilent.github.io/matthew-collaro/articles/mechanical-engineer-to-mbse.html">
+<link rel="alternate" type="application/rss+xml" title="Matthew Collaro — Writing" href="https://radsilent.github.io/matthew-collaro/feed.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Matthew Collaro">
+<meta property="og:title" content="From the Factory Floor to Systems Architecture — Matthew Collaro">
+<meta property="og:description" content="How writing overhaul instructions for flight control actuators turned out to be useful preparation for architecture modeling, and what I would tell someone making the same move.">
+<meta property="og:url" content="https://radsilent.github.io/matthew-collaro/articles/mechanical-engineer-to-mbse.html">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="From the Factory Floor to Systems Architecture — Matthew Collaro">
+<meta name="twitter:description" content="How writing overhaul instructions for flight control actuators turned out to be useful preparation for architecture modeling, and what I would tell someone making the same move.">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://radsilent.github.io/matthew-collaro/#person",
+      "name": "Matthew Collaro",
+      "givenName": "Matthew",
+      "familyName": "Collaro",
+      "alternateName": "Matt Collaro",
+      "url": "https://radsilent.github.io/matthew-collaro/",
+      "jobTitle": "Systems Engineer and Founder",
+      "description": "Systems engineer specializing in model-based systems engineering, SysML architecture modeling, and requirements traceability across aerospace, defense, and automotive programs.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Phoenix",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of South Florida"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Georgia Institute of Technology"
+        }
+      ],
+      "knowsAbout": [
+        "Model-Based Systems Engineering",
+        "SysML",
+        "Requirements Traceability",
+        "Systems Architecture",
+        "Aerospace Systems Engineering",
+        "Model Context Protocol",
+        "Verification and Validation",
+        "DoDAF"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Vector Stream Systems LLC",
+        "url": "https://vectorstreamsystems.com/"
+      },
+      "sameAs": [
+        "https://github.com/radsilent",
+        "https://vectorstreamsystems.com/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://radsilent.github.io/matthew-collaro/#website",
+      "url": "https://radsilent.github.io/matthew-collaro/",
+      "name": "Matthew Collaro \u2014 Systems Engineer",
+      "publisher": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://radsilent.github.io/matthew-collaro/articles/mechanical-engineer-to-mbse.html#article",
+      "headline": "From the Factory Floor to Systems Architecture \u2014 Matthew Collaro",
+      "description": "How writing overhaul instructions for flight control actuators turned out to be useful preparation for architecture modeling, and what I would tell someone making the same move.",
+      "url": "https://radsilent.github.io/matthew-collaro/articles/mechanical-engineer-to-mbse.html",
+      "datePublished": "2026-01-24",
+      "dateModified": "2026-01-24",
+      "wordCount": 886,
+      "author": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "publisher": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#person"
+      },
+      "isPartOf": {
+        "@id": "https://radsilent.github.io/matthew-collaro/#website"
+      },
+      "mainEntityOfPage": "https://radsilent.github.io/matthew-collaro/articles/mechanical-engineer-to-mbse.html",
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Matthew Collaro</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="../index.html">Profile</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../writing.html">Writing</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <article>
+    <header class="page-head">
+      <h1>From the factory floor to systems architecture</h1>
+      <p class="byline">By <a href="../index.html" rel="author">Matthew Collaro</a> &middot; <time datetime="2026-01-24">January 24, 2026</time> &middot; 886 words</p>
+    </header>
+<p>My first engineering job was writing repair and overhaul work instructions for electro-mechanical flight control actuation systems at Parker Hannifin. Military aircraft sustainment. A mechanical engineering degree and a stack of drawings.</p>
+<p>It is not the obvious path into model-based systems engineering, and for a while I treated it as something to get past. I have come around to thinking it was the most useful two years I could have had.</p>
+<h2 id="what-manufacturing-teaches-that-architecture-does-not">What manufacturing teaches that architecture does not</h2>
+<p><strong>A specification is only as good as the person who has to follow it.</strong> Overhaul instructions are read by a technician with a part in front of them. Any ambiguity gets resolved by them, on the spot, in a way you will not learn about. If step 14 says "torque to specification" and the specification is in a different document, step 14 is wrong regardless of how defensible it looked in review.</p>
+<p>That is the same failure as a requirement that says "the system shall respond promptly." Somebody downstream will resolve it, and they will not resolve it the way you meant. I have never been able to un-see this, and it makes me much less patient with prose requirements than I would otherwise be.</p>
+<p><strong>Physical constraints do not negotiate.</strong> You cannot schedule around a fixture that does not exist or a tolerance that cannot be held. Software and architecture work has more give in it, and that flexibility makes it easy to defer hard questions. Manufacturing does not offer the option, which is good training.</p>
+<p><strong>Interfaces are real objects.</strong> When I replaced legacy analog hydraulic test units with digital data acquisition systems, the interface was not a line on a diagram. It was a connector, a signal conditioning path, a sample rate, and a calibration procedure. It is harder to hand-wave an interface after you have physically wired one and watched it produce nonsense because of an assumption you did not know you had made.</p>
+<p>Most interface defects I have seen since are the same defect at a different scale: two sides holding incompatible assumptions that neither wrote down.</p>
+<h2 id="the-transition">The transition</h2>
+<p>I moved into systems engineering at Raytheon, modeling embedded system interfaces and building SysML and DoDAF architecture models. The gap I had to close was notation, and I over-estimated how large that gap was.</p>
+<p>SysML is not difficult. It is a notation with a specification, and a few weeks of deliberate practice gets you to competence. Georgia Tech's SysML 101/201 sequence was useful for structure, but the language itself was never the obstacle.</p>
+<p>The real gap was <em>method</em> — knowing what to model, in what order, at what fidelity, and when to stop. Nobody teaches that well, because it is mostly judgment accumulated by doing it and getting it wrong. My first models were meticulous and useless: correct syntax, arbitrary decomposition, far more detail in the parts I understood than the parts that mattered.</p>
+<p>The other gap was scope of concern. As a manufacturing engineer my question was "can this be built and maintained." As a systems engineer the question became "is this the right thing, does it satisfy what it must, and can we prove it." Verification thinking in particular took a while, because it requires designing backwards from evidence rather than forwards from function.</p>
+<h2 id="what-i-would-tell-someone-making-the-move">What I would tell someone making the move</h2>
+<p><strong>Learn the method, not just the notation.</strong> Being fluent in SysML and having no method produces syntactically valid models with arbitrary structure. Read about OOSEM or a comparable method and use it deliberately, even when it feels like overhead. The sequencing is the value.</p>
+<p><strong>Model something you already understand deeply.</strong> Your first model should be of a system you know cold, so that when the model looks wrong you can tell it is wrong. Modeling an unfamiliar system in an unfamiliar notation means you cannot distinguish your errors from your ignorance.</p>
+<p><strong>Find out what the model is for before building it.</strong> The most common waste is modeling breadth nobody needs. Ask what question the model will answer and what artifact it will produce. If there is no answer, the model will be abandoned, and you should know that going in.</p>
+<p><strong>Keep the physical instinct.</strong> Systems engineering has a tendency to drift into abstraction, and models can become internally consistent descriptions of nothing. Coming from manufacturing is a defense against that. The question "how would you actually test this" is one of the most useful things you can ask in an architecture review, and people with hands-on backgrounds ask it more.</p>
+<h2 id="where-it-led">Where it led</h2>
+<p>The thread from overhaul instructions to what I do now is more continuous than it looks. Instructions were about making a procedure unambiguous enough to be executed correctly by someone who was not in the room when it was written. Interface modeling is the same problem between subsystems. Requirements traceability is the same problem across time. The <a href="../projects.html">governed tooling I build now</a> is the same problem again, where the party who was not in the room is an automated one.</p>
+<p>The specific technologies changed. The question did not: how do you write something down precisely enough that it survives being handed to someone else.</p>
+<p>---</p>
+<p>Related: <a href="mbse-adoption-community-of-practice.html">What I learned leading an MBSE community of practice</a>.</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Matthew Collaro</strong> &mdash; Systems Engineer, Phoenix, AZ</p>
+    <p><a href="https://github.com/radsilent" rel="me noopener">GitHub</a> &middot;
+       <a href="https://vectorstreamsystems.com/" rel="noopener">Vector Stream Systems LLC</a> &middot;
+       <a href="../feed.xml">RSS</a></p>
+    <p class="fine">&copy; 2026 Matthew Collaro. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
