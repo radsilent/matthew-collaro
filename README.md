@@ -1,6 +1,6 @@
 # matthew-collaro
 
-Personal site for Matthew Collaro — systems engineer, Phoenix AZ.
+Personal site for Matthew Collaro systems engineer
 
 Static site, no dependencies. Content lives in `content/` as Markdown with
 simple frontmatter; `build.py` renders it into `docs/`, which GitHub Pages
