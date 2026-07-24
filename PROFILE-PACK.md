@@ -160,3 +160,32 @@ the new URLs to Bing and Yandex.
 
 Publishing cadence matters more than volume: one genuine essay a month sustains
 the site's authority better than ten published at once and then nothing.
+
+---
+
+## Keep the site from going dark (do this first thing)
+
+Both repos reverted from public to private on their own once during setup, which
+disabled Pages and 404'd the site. `guard.sh` in this repo re-asserts public
+visibility, re-enables Pages, and logs a health check. Install it:
+
+```bash
+chmod +x ~/matthew-collaro-site/guard.sh
+( crontab -l 2>/dev/null; echo "*/15 * * * * /home/vectorstream/matthew-collaro-site/guard.sh" ) | crontab -
+```
+
+Check `~/matthew-collaro-site/guard.log` for history. If it reports repeated
+reversions, the cause is an account-level setting rather than a fluke — check
+GitHub → Settings → Repository defaults, and whether the account is subject to
+an enterprise/org policy restricting public repositories.
+
+## Live property inventory
+
+| Property | URL |
+|---|---|
+| Personal site, 15 pages | https://radsilent.github.io/matthew-collaro/ |
+| GitHub profile | https://github.com/radsilent |
+| Gist — MBSE validation rules | https://gist.github.com/radsilent/bf70a7861ab656cf6261b4d85bd9d897 |
+| Gist — interface checklist | https://gist.github.com/radsilent/d11b5263edd63ab56c92668cabd75011 |
+| Gist — requirements writing | https://gist.github.com/radsilent/8198b549e551f73a1e8678f8dd036a51 |
+| Gist — MBSE adoption 90 days | https://gist.github.com/radsilent/76648b62dab46a23c96ebb624181b2f2 |
