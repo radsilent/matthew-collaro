@@ -3,7 +3,8 @@
 
 Reads Markdown files with simple key: value frontmatter from content/,
 wraps them in a shared template, and writes a deployable site to dist/.
-Also emits sitemap.xml, robots.txt, and an RSS feed.
+Also emits sitemap.xml and robots.txt. No feed: syndication is deliberately
+omitted from this site.
 
 Usage:  python3 build.py [--base-url https://example.com/path]
 """
@@ -259,7 +260,6 @@ def render(page, base, body_html):
 <meta name="author" content="{PERSON['name']}">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="{url}">
-<link rel="alternate" type="application/rss+xml" title="{PERSON['name']} — Writing" href="{base}/feed.xml">
 <meta property="og:type" content="{'article' if page['type'] == 'article' else 'profile'}">
 <meta property="og:site_name" content="{PERSON['name']}">
 <meta property="og:title" content="{html.escape(page['title'], quote=True)}">
@@ -300,8 +300,7 @@ def render(page, base, body_html):
   <div class="wrap">
     <p><strong>{PERSON['name']}</strong> &mdash; {PERSON['role']}</p>
     <p><a href="{PERSON['github']}" rel="me noopener">GitHub</a> &middot;
-       <a href="{PERSON['company_url']}" rel="noopener">{PERSON['company']}</a> &middot;
-       <a href="{prefix}feed.xml">RSS</a></p>
+       <a href="{PERSON['company_url']}" rel="noopener">{PERSON['company']}</a></p>
     <p class="fine">&copy; {datetime.now(timezone.utc).year} {PERSON['name']}. All rights reserved.</p>
   </div>
 </footer>
@@ -381,24 +380,6 @@ def build(base):
 
     (DIST / "robots.txt").write_text(
         f"User-agent: *\nAllow: /\n\nSitemap: {base}/sitemap.xml\n", encoding="utf-8")
-
-    # RSS
-    items = "\n".join(
-        f"    <item>\n"
-        f"      <title>{sx.escape(a['title'])}</title>\n"
-        f"      <link>{base}/{a['out']}</link>\n"
-        f"      <guid isPermaLink=\"true\">{base}/{a['out']}</guid>\n"
-        f"      <description>{sx.escape(a['description'])}</description>\n"
-        f"      <dc:creator>{PERSON['name']}</dc:creator>\n"
-        f"      <pubDate>{datetime.strptime(a['date'], '%Y-%m-%d').strftime('%a, %d %b %Y')} 00:00:00 GMT</pubDate>\n"
-        f"    </item>" for a in articles)
-    (DIST / "feed.xml").write_text(
-        '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">\n'
-        f"  <channel>\n    <title>{PERSON['name']} — Writing</title>\n"
-        f"    <link>{base}/</link>\n"
-        f"    <description>Essays on model-based systems engineering by {PERSON['name']}.</description>\n"
-        f"    <language>en-us</language>\n{items}\n  </channel>\n</rss>\n", encoding="utf-8")
 
     (DIST / ".nojekyll").write_text("", encoding="utf-8")
 

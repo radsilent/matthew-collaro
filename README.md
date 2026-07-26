@@ -11,7 +11,6 @@ Personal site for Matthew Collaro, systems engineer.
 | Projects | https://radsilent.github.io/matthew-collaro/projects.html |
 | Writing | https://radsilent.github.io/matthew-collaro/writing.html |
 | Contact | https://radsilent.github.io/matthew-collaro/contact.html |
-| Feed | https://radsilent.github.io/matthew-collaro/feed.xml |
 | Sitemap | https://radsilent.github.io/matthew-collaro/sitemap.xml |
 
 Companion site: https://radsilent.github.io/ (repo
@@ -24,12 +23,13 @@ public** — Pages is disabled the moment it goes private, and the site 404s.
 ## Content rule
 
 Two former employers are excluded from anything published here by standing
-instruction and are referred to only as "a defense space systems prime" and "a
-missile defense prime". Release gate, must return nothing before every push:
+instruction, and appear only as "a defense space systems prime" and "a missile
+defense prime". Personal phone and personal email are likewise never published —
+contact routes through the company site.
 
-```bash
-grep -rniE "raytheon|northrop|grumman|protonmail" . --exclude-dir=.git
-```
+The release-gate grep pattern is kept in local notes rather than in this repo,
+since spelling the excluded terms here would publish them. Run it against the
+working tree before every push; it must return nothing.
 
 Static site, no dependencies. Content lives in `content/` as Markdown with
 simple frontmatter; `build.py` renders it into `docs/`, which GitHub Pages
@@ -41,8 +41,9 @@ serves.
 python3 build.py --base-url "https://radsilent.github.io/matthew-collaro"
 ```
 
-Emits HTML, `sitemap.xml`, `robots.txt`, and `feed.xml` with schema.org
-`Person` / `BlogPosting` structured data on every page.
+Emits HTML, `sitemap.xml`, and `robots.txt` with schema.org `Person` /
+`BlogPosting` structured data on every page. No syndication feed and no
+comment/message-board component on any page — both are deliberately excluded.
 
 ## Adding a post
 
