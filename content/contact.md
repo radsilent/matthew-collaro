@@ -10,6 +10,7 @@ I am open to conversations about model-based systems engineering adoption, requi
 
 ## Where to find me
 
+- **LinkedIn** — [linkedin.com/in/mattcollaro](https://www.linkedin.com/in/mattcollaro/)
 - **GitHub** — [github.com/radsilent](https://github.com/radsilent)
 - **Company** — [Vector Stream Systems LLC](https://vectorstreamsystems.com/)
 - **Consulting enquiries** — via the [Vector Stream Systems contact page](https://vectorstreamsystems.com/contact.html)

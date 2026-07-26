@@ -27,6 +27,7 @@ PERSON = {
     "alt": "Matt Collaro",
     "role": "Systems Engineer",
     "github": "https://github.com/radsilent",
+    "linkedin": "https://www.linkedin.com/in/mattcollaro/",
     "company": "Vector Stream Systems LLC",
     "company_url": "https://vectorstreamsystems.com/",
 }
@@ -167,7 +168,7 @@ def person_ld(base):
             "name": PERSON["company"],
             "url": PERSON["company_url"],
         },
-        "sameAs": [PERSON["github"], PERSON["company_url"]],
+        "sameAs": [PERSON["github"], PERSON["linkedin"], PERSON["company_url"]],
     }
 
 
@@ -300,6 +301,7 @@ def render(page, base, body_html):
   <div class="wrap">
     <p><strong>{PERSON['name']}</strong> &mdash; {PERSON['role']}</p>
     <p><a href="{PERSON['github']}" rel="me noopener">GitHub</a> &middot;
+       <a href="{PERSON['linkedin']}" rel="me noopener">LinkedIn</a> &middot;
        <a href="{PERSON['company_url']}" rel="noopener">{PERSON['company']}</a></p>
     <p class="fine">&copy; {datetime.now(timezone.utc).year} {PERSON['name']}. All rights reserved.</p>
   </div>

@@ -6,7 +6,7 @@ type: page
 date: 2026-07-24
 ---
 
-Systems engineer. Founder and Platform Systems Architect at [Vector Stream Systems LLC](https://vectorstreamsystems.com/), and Senior Systems Engineer at Lucid Motors.
+I am Matthew Collaro, a systems engineer. Founder and Platform Systems Architect at [Vector Stream Systems LLC](https://vectorstreamsystems.com/), and Senior Systems Engineer at Lucid Motors. Full professional history is on [LinkedIn](https://www.linkedin.com/in/mattcollaro/).
 
 I have spent seven years modeling, integrating, and verifying systems in environments where unverified artifacts do not ship — commercial aircraft networks, strategic missile subsystems, naval concept architectures, and production electric vehicles. That work has run through Boeing Commercial Airplanes, a defense space systems prime, a missile defense prime, Deloitte Government & Public Services, and Parker Hannifin Aerospace.
 
