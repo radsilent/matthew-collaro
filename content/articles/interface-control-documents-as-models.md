@@ -1,5 +1,5 @@
 ---
-title: Interface Control Documents Should Be Models — Matthew Collaro
+title: Interface Control Documents Should Be Models, Matthew Collaro
 h1: Interface control documents should be models
 description: The ICD is where integration problems are born. Treating it as a document instead of a model is why interfaces that pass review still fail on the bench.
 type: article
@@ -8,7 +8,7 @@ date: 2026-06-09
 
 An interface control document is a contract between two teams who will not talk to each other again for six months. It should be treated with the seriousness of a contract. Usually it is treated with the seriousness of a Word file.
 
-I have spent a lot of my career on interfaces — modeling embedded system interfaces at a missile defense prime, building model-based Interface Control Diagrams at Boeing, and more recently untangling signal ownership within vehicle infotainment controllers. The pattern is consistent enough that I think it is structural.
+I have spent a lot of my career on interfaces: modeling embedded system interfaces at a defense prime, building model-based Interface Control Diagrams at Boeing, and more recently untangling signal ownership within vehicle infotainment controllers. The pattern is consistent enough that I think it is structural.
 
 ## What goes wrong with the document form
 
@@ -30,7 +30,7 @@ When the interface is a model element rather than a section of prose, several th
 
 **Completeness is computable.** Every port either connects to something or is explicitly marked as unconnected with rationale. Every signal has a producer and at least one consumer. A model can enforce this. A document can only assert it.
 
-**Change impact is derivable.** Change a signal definition and the model tells you which components consume it, which requirements reference it, and which test cases exercise it. This is the single most valuable property, and it is the one documents fundamentally cannot provide. Not because document tooling is immature — because the relationships are not represented anywhere a tool can read.
+**Change impact is derivable.** Change a signal definition and the model tells you which components consume it, which requirements reference it, and which test cases exercise it. This is the single most valuable property, and it is the one documents fundamentally cannot provide. Not because document tooling is immature, because the relationships are not represented anywhere a tool can read.
 
 **There is one instance.** Both sides reference the same element. There is no your-copy and my-copy. Disagreements about what the interface is become impossible to sustain, which sounds trivial and eliminates an entire genre of integration meeting.
 
@@ -38,7 +38,7 @@ When the interface is a model element rather than a section of prose, several th
 
 ## Interfaces as a security surface
 
-At the missile defense prime I modeled embedded system interfaces partly for integration and partly for cybersecurity. At Boeing, model-based ICDs fed directly into networked system vulnerability identification during threat analysis.
+At the defense prime I modeled embedded system interfaces partly for integration and partly for cybersecurity. At Boeing, model-based ICDs fed directly into networked system vulnerability identification during threat analysis.
 
 The connection is not obvious until you have done it, and then it is hard to unsee: **an interface you cannot specify precisely is an interface nobody fully owns, and interfaces nobody fully owns are where the exposure is.** Formal modeling does not find vulnerabilities by being clever. It finds them by refusing to accept vagueness, and vagueness is where the exposure hides.
 
@@ -46,7 +46,7 @@ Ask what data crosses a boundary, in what direction, under what authority, and w
 
 ## Objections worth taking seriously
 
-**"Our suppliers need a document."** Fine — generate one. A PDF produced from the model, with a version and a hash tying it to the model state it came from, is a document. The distinction that matters is whether the document is the source or a rendering. Rendered documents are fine. Authored documents drift.
+**"Our suppliers need a document."** Fine, generate one. A PDF produced from the model, with a version and a hash tying it to the model state it came from, is a document. The distinction that matters is whether the document is the source or a rendering. Rendered documents are fine. Authored documents drift.
 
 **"The tooling is heavy."** Sometimes. But the comparison is not against zero cost; it is against the cost of the integration defects the document form produces, which is real and simply appears in a different budget line, usually later and attributed to someone else.
 

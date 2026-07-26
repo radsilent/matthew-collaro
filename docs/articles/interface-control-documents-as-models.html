@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Interface Control Documents Should Be Models — Matthew Collaro</title>
+<title>Interface Control Documents Should Be Models, Matthew Collaro</title>
 <meta name="description" content="The ICD is where integration problems are born. Treating it as a document instead of a model is why interfaces that pass review still fail on the bench.">
 <meta name="author" content="Matthew Collaro">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://radsilent.github.io/matthew-collaro/articles/interface-control-documents-as-models.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Matthew Collaro">
-<meta property="og:title" content="Interface Control Documents Should Be Models — Matthew Collaro">
+<meta property="og:title" content="Interface Control Documents Should Be Models, Matthew Collaro">
 <meta property="og:description" content="The ICD is where integration problems are born. Treating it as a document instead of a model is why interfaces that pass review still fail on the bench.">
 <meta property="og:url" content="https://radsilent.github.io/matthew-collaro/articles/interface-control-documents-as-models.html">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Interface Control Documents Should Be Models — Matthew Collaro">
+<meta name="twitter:title" content="Interface Control Documents Should Be Models, Matthew Collaro">
 <meta name="twitter:description" content="The ICD is where integration problems are born. Treating it as a document instead of a model is why interfaces that pass review still fail on the bench.">
 <link rel="stylesheet" href="../style.css">
 <script type="application/ld+json">
@@ -67,7 +67,7 @@
       "@type": "WebSite",
       "@id": "https://radsilent.github.io/matthew-collaro/#website",
       "url": "https://radsilent.github.io/matthew-collaro/",
-      "name": "Matthew Collaro \u2014 Systems Engineer",
+      "name": "Matthew Collaro, Systems Engineer",
       "publisher": {
         "@id": "https://radsilent.github.io/matthew-collaro/#person"
       },
@@ -76,12 +76,12 @@
     {
       "@type": "BlogPosting",
       "@id": "https://radsilent.github.io/matthew-collaro/articles/interface-control-documents-as-models.html#article",
-      "headline": "Interface Control Documents Should Be Models \u2014 Matthew Collaro",
+      "headline": "Interface Control Documents Should Be Models, Matthew Collaro",
       "description": "The ICD is where integration problems are born. Treating it as a document instead of a model is why interfaces that pass review still fail on the bench.",
       "url": "https://radsilent.github.io/matthew-collaro/articles/interface-control-documents-as-models.html",
       "datePublished": "2026-06-09",
       "dateModified": "2026-06-09",
-      "wordCount": 969,
+      "wordCount": 967,
       "author": {
         "@id": "https://radsilent.github.io/matthew-collaro/#person"
       },
@@ -119,10 +119,10 @@
   <article>
     <header class="page-head">
       <h1>Interface control documents should be models</h1>
-      <p class="byline">By <a href="../index.html" rel="author">Matthew Collaro</a> &middot; <time datetime="2026-06-09">June 9, 2026</time> &middot; 969 words</p>
+      <p class="byline">By <a href="../index.html" rel="author">Matthew Collaro</a> &middot; <time datetime="2026-06-09">June 9, 2026</time> &middot; 967 words</p>
     </header>
 <p>An interface control document is a contract between two teams who will not talk to each other again for six months. It should be treated with the seriousness of a contract. Usually it is treated with the seriousness of a Word file.</p>
-<p>I have spent a lot of my career on interfaces — modeling embedded system interfaces at a missile defense prime, building model-based Interface Control Diagrams at Boeing, and more recently untangling signal ownership within vehicle infotainment controllers. The pattern is consistent enough that I think it is structural.</p>
+<p>I have spent a lot of my career on interfaces: modeling embedded system interfaces at a defense prime, building model-based Interface Control Diagrams at Boeing, and more recently untangling signal ownership within vehicle infotainment controllers. The pattern is consistent enough that I think it is structural.</p>
 <h2 id="what-goes-wrong-with-the-document-form">What goes wrong with the document form</h2>
 <p><strong>Prose admits ambiguity that implementation cannot.</strong> "The controller shall report status periodically." Two teams read this. One implements a 100 ms periodic message. The other implements on-change reporting with a 1 s heartbeat and considers it periodic. Both are defensible readings. Both pass document review, because the reviewer also read it as whichever one they had in mind.</p>
 <p>You find out on the bench. If you are lucky, you find out on the bench.</p>
@@ -133,15 +133,15 @@
 <p>When the interface is a model element rather than a section of prose, several things become possible that were not.</p>
 <p><strong>Types are checked.</strong> A signal has a type, a range, units, and an encoding. If one side declares a value in meters per second and the other consumes it as kilometers per hour, that is not a discussion at integration. It is a validation failure at commit. Unit mismatches are among the most expensive and most preventable integration defects in the industry, and they are trivially catchable if units are modeled rather than mentioned.</p>
 <p><strong>Completeness is computable.</strong> Every port either connects to something or is explicitly marked as unconnected with rationale. Every signal has a producer and at least one consumer. A model can enforce this. A document can only assert it.</p>
-<p><strong>Change impact is derivable.</strong> Change a signal definition and the model tells you which components consume it, which requirements reference it, and which test cases exercise it. This is the single most valuable property, and it is the one documents fundamentally cannot provide. Not because document tooling is immature — because the relationships are not represented anywhere a tool can read.</p>
+<p><strong>Change impact is derivable.</strong> Change a signal definition and the model tells you which components consume it, which requirements reference it, and which test cases exercise it. This is the single most valuable property, and it is the one documents fundamentally cannot provide. Not because document tooling is immature, because the relationships are not represented anywhere a tool can read.</p>
 <p><strong>There is one instance.</strong> Both sides reference the same element. There is no your-copy and my-copy. Disagreements about what the interface is become impossible to sustain, which sounds trivial and eliminates an entire genre of integration meeting.</p>
 <p><strong>Views can be generated per consumer.</strong> The software team wants message formats. The safety team wants failure propagation paths. The test team wants observability points. From one model you generate three views that cannot contradict each other, because they are projections of the same underlying thing. From one document you get one document that serves nobody especially well.</p>
 <h2 id="interfaces-as-a-security-surface">Interfaces as a security surface</h2>
-<p>At the missile defense prime I modeled embedded system interfaces partly for integration and partly for cybersecurity. At Boeing, model-based ICDs fed directly into networked system vulnerability identification during threat analysis.</p>
+<p>At the defense prime I modeled embedded system interfaces partly for integration and partly for cybersecurity. At Boeing, model-based ICDs fed directly into networked system vulnerability identification during threat analysis.</p>
 <p>The connection is not obvious until you have done it, and then it is hard to unsee: <strong>an interface you cannot specify precisely is an interface nobody fully owns, and interfaces nobody fully owns are where the exposure is.</strong> Formal modeling does not find vulnerabilities by being clever. It finds them by refusing to accept vagueness, and vagueness is where the exposure hides.</p>
 <p>Ask what data crosses a boundary, in what direction, under what authority, and with what validation on receipt. Model that honestly and the gaps announce themselves. Write it as prose and the gaps read as reasonable-sounding paragraphs.</p>
 <h2 id="objections-worth-taking-seriously">Objections worth taking seriously</h2>
-<p><strong>"Our suppliers need a document."</strong> Fine — generate one. A PDF produced from the model, with a version and a hash tying it to the model state it came from, is a document. The distinction that matters is whether the document is the source or a rendering. Rendered documents are fine. Authored documents drift.</p>
+<p><strong>"Our suppliers need a document."</strong> Fine, generate one. A PDF produced from the model, with a version and a hash tying it to the model state it came from, is a document. The distinction that matters is whether the document is the source or a rendering. Rendered documents are fine. Authored documents drift.</p>
 <p><strong>"The tooling is heavy."</strong> Sometimes. But the comparison is not against zero cost; it is against the cost of the integration defects the document form produces, which is real and simply appears in a different budget line, usually later and attributed to someone else.</p>
 <p><strong>"We do not have modeling skills across all the teams."</strong> This is the honest objection and the one I would address first. It also does not require every engineer to be a modeler. It requires the interface owner to be one, and everyone else to consume generated views. That is a much smaller training problem than it initially appears, and it is the shape most successful adoptions actually take.</p>
 <p>---</p>
@@ -151,7 +151,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p><strong>Matthew Collaro</strong> &mdash; Systems Engineer</p>
+    <p><strong>Matthew Collaro</strong>, Systems Engineer</p>
     <p><a href="https://github.com/radsilent" rel="me noopener">GitHub</a> &middot;
        <a href="https://www.linkedin.com/in/mattcollaro/" rel="me noopener">LinkedIn</a> &middot;
        <a href="https://vectorstreamsystems.com/" rel="noopener">Vector Stream Systems LLC</a></p>

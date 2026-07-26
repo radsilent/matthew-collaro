@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Model Context Protocol for Engineering Toolchains — Matthew Collaro</title>
+<title>Model Context Protocol for Engineering Toolchains, Matthew Collaro</title>
 <meta name="description" content="Why exposing MBSE context through typed, governed operations beats dumping exported documents into a context window, and what the interface design has to get right.">
 <meta name="author" content="Matthew Collaro">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://radsilent.github.io/matthew-collaro/articles/model-context-protocol-engineering-toolchains.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Matthew Collaro">
-<meta property="og:title" content="Model Context Protocol for Engineering Toolchains — Matthew Collaro">
+<meta property="og:title" content="Model Context Protocol for Engineering Toolchains, Matthew Collaro">
 <meta property="og:description" content="Why exposing MBSE context through typed, governed operations beats dumping exported documents into a context window, and what the interface design has to get right.">
 <meta property="og:url" content="https://radsilent.github.io/matthew-collaro/articles/model-context-protocol-engineering-toolchains.html">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Model Context Protocol for Engineering Toolchains — Matthew Collaro">
+<meta name="twitter:title" content="Model Context Protocol for Engineering Toolchains, Matthew Collaro">
 <meta name="twitter:description" content="Why exposing MBSE context through typed, governed operations beats dumping exported documents into a context window, and what the interface design has to get right.">
 <link rel="stylesheet" href="../style.css">
 <script type="application/ld+json">
@@ -67,7 +67,7 @@
       "@type": "WebSite",
       "@id": "https://radsilent.github.io/matthew-collaro/#website",
       "url": "https://radsilent.github.io/matthew-collaro/",
-      "name": "Matthew Collaro \u2014 Systems Engineer",
+      "name": "Matthew Collaro, Systems Engineer",
       "publisher": {
         "@id": "https://radsilent.github.io/matthew-collaro/#person"
       },
@@ -76,7 +76,7 @@
     {
       "@type": "BlogPosting",
       "@id": "https://radsilent.github.io/matthew-collaro/articles/model-context-protocol-engineering-toolchains.html#article",
-      "headline": "Model Context Protocol for Engineering Toolchains \u2014 Matthew Collaro",
+      "headline": "Model Context Protocol for Engineering Toolchains, Matthew Collaro",
       "description": "Why exposing MBSE context through typed, governed operations beats dumping exported documents into a context window, and what the interface design has to get right.",
       "url": "https://radsilent.github.io/matthew-collaro/articles/model-context-protocol-engineering-toolchains.html",
       "datePublished": "2026-05-03",
@@ -125,7 +125,7 @@
 <p>It fails on real programs for reasons that have nothing to do with context length.</p>
 <h2 id="why-the-export-approach-fails">Why the export approach fails</h2>
 <p><strong>Exports are stale the moment they are made.</strong> An engineering model changes daily. An export is a photograph. Any answer derived from it is an answer about the system as of Tuesday, delivered with no indication that it is not about the system as of today. On a program where the whole point is keeping artifacts synchronized, introducing a new source of drift is a strange thing to do deliberately.</p>
-<p><strong>Exports lose structure.</strong> XMI flattened into text preserves the words and destroys the graph. The relationship between a requirement and the component satisfying it becomes textual adjacency rather than a traversable edge. So the model reconstructs relationships by inference — which is exactly the operation you wanted to avoid, since the relationships were already recorded precisely.</p>
+<p><strong>Exports lose structure.</strong> XMI flattened into text preserves the words and destroys the graph. The relationship between a requirement and the component satisfying it becomes textual adjacency rather than a traversable edge. So the model reconstructs relationships by inference, which is exactly the operation you wanted to avoid, since the relationships were already recorded precisely.</p>
 <p><strong>Access control disappears.</strong> Engineering models contain export-controlled content, supplier-proprietary content, and program-sensitive content. A flat export has no notion of who is asking. Anyone who has worked under ITAR or on a classified program will recognize why this is not a minor implementation detail.</p>
 <p><strong>Provenance disappears.</strong> When the assistant asserts something, you want to know which model elements it came from. Text in a context window has no addresses. You get an assertion and a vibe.</p>
 <h2 id="what-a-protocol-interface-changes">What a protocol interface changes</h2>
@@ -142,18 +142,18 @@
 <p>The difference this makes is not incremental. When an assistant answers "which requirements are affected by changing this interface" by traversing the actual graph, the answer is derived rather than guessed, and every item in it can be clicked. When it answers from a flattened export, the answer is a plausible list.</p>
 <h2 id="design-decisions-that-matter">Design decisions that matter</h2>
 <p><strong>Return references, not just content.</strong> Every result should carry the identifier of the element it came from. This is what makes downstream validation possible: given an assertion and its claimed sources, you can check whether the sources say that. Without references you are trusting a summary.</p>
-<p><strong>Make operations narrow.</strong> A tool called <code>query_model</code> that accepts arbitrary graph queries is convenient and hard to govern. Narrow operations — <code>get_requirement</code>, <code>trace_downstream</code>, <code>get_interface</code> — are easier to reason about, easier to authorize, easier to audit, and easier for a model to use correctly. Breadth in the interface pushes complexity onto the caller, which is the wrong direction when the caller is a language model.</p>
+<p><strong>Make operations narrow.</strong> A tool called <code>query_model</code> that accepts arbitrary graph queries is convenient and hard to govern. Narrow operations, <code>get_requirement</code>, <code>trace_downstream</code>, <code>get_interface</code>, are easier to reason about, easier to authorize, easier to audit, and easier for a model to use correctly. Breadth in the interface pushes complexity onto the caller, which is the wrong direction when the caller is a language model.</p>
 <p><strong>Enforce scope at the interface.</strong> Authorization belongs in the operation, not in a prompt instruction. "Do not reveal export-controlled content" as a system prompt is not a control. A retrieval path that cannot return content the requester is not cleared for is a control. Treat the assistant as an untrusted caller, because it is one.</p>
 <p><strong>Separate reads from writes, and gate writes hard.</strong> Reading model context is low-risk. Writing to an authoritative engineering model is a configuration change. If you expose write operations at all, they should produce proposals that enter the normal change process, not direct mutations. The temptation to let the agent just fix it is strong and should be resisted until the review path exists.</p>
-<p><strong>Version everything.</strong> Every response should indicate the model version it reflects. This lets you detect when an analysis was performed against a state that has since changed, and it makes the whole interaction reproducible — which matters enormously if any of this feeds a certification artifact.</p>
+<p><strong>Version everything.</strong> Every response should indicate the model version it reflects. This lets you detect when an analysis was performed against a state that has since changed, and it makes the whole interaction reproducible, which matters enormously if any of this feeds a certification artifact.</p>
 <h2 id="where-this-sits-relative-to-the-tools">Where this sits relative to the tools</h2>
 <p>A frequent misunderstanding is that this replaces Cameo, or DOORS, or JAMA. It does not, and a platform that tries to will lose. Those tools hold the authoritative content and the workflows engineers already know.</p>
-<p>What the protocol layer adds is a governed read path over the top of them — one that speaks a consistent vocabulary across tools that otherwise share nothing, so that a question about a requirement in DOORS, a block in Cameo, and a test case in a third system can be answered as one question. The integration burden lives in the adapters, which is the right place for it.</p>
+<p>What the protocol layer adds is a governed read path over the top of them: one that speaks a consistent vocabulary across tools that otherwise share nothing, so that a question about a requirement in DOORS, a block in Cameo, and a test case in a third system can be answered as one question. The integration burden lives in the adapters, which is the right place for it.</p>
 <p>The tool ecosystem stays intact. The intelligence layer sits above it and is not authoritative for anything.</p>
 <h2 id="the-honest-limitation">The honest limitation</h2>
 <p>None of this makes the assistant correct. It makes the assistant's claims checkable, which is a different and more achievable goal.</p>
 <p>A grounded assistant with a well-designed protocol interface will still produce wrong answers. It will traverse correctly and characterize incorrectly. The value is that when it does, you can see which elements it read, and the assertion can be validated against them mechanically rather than by a reviewer's impression.</p>
-<p>That is the property worth engineering for. Not correctness — auditability. Correctness is what you get from auditability plus iteration.</p>
+<p>That is the property worth engineering for. Not correctness, auditability. Correctness is what you get from auditability plus iteration.</p>
 <p>---</p>
 <p>Related: <a href="guardrails-for-ai-generated-engineering-artifacts.html">Guardrails for AI-generated engineering artifacts</a>.</p>
   </article>
@@ -161,7 +161,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p><strong>Matthew Collaro</strong> &mdash; Systems Engineer</p>
+    <p><strong>Matthew Collaro</strong>, Systems Engineer</p>
     <p><a href="https://github.com/radsilent" rel="me noopener">GitHub</a> &middot;
        <a href="https://www.linkedin.com/in/mattcollaro/" rel="me noopener">LinkedIn</a> &middot;
        <a href="https://vectorstreamsystems.com/" rel="noopener">Vector Stream Systems LLC</a></p>

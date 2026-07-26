@@ -1,5 +1,5 @@
 ---
-title: From the Factory Floor to Systems Architecture — Matthew Collaro
+title: From the Factory Floor to Systems Architecture, Matthew Collaro
 h1: From the factory floor to systems architecture
 description: How writing overhaul instructions for flight control actuators turned out to be useful preparation for architecture modeling, and what I would tell someone making the same move.
 type: article
@@ -24,11 +24,11 @@ Most interface defects I have seen since are the same defect at a different scal
 
 ## The transition
 
-I moved into systems engineering at a missile defense prime, modeling embedded system interfaces and building SysML and DoDAF architecture models. The gap I had to close was notation, and I over-estimated how large that gap was.
+I moved into systems engineering at a defense prime, modeling embedded system interfaces and building SysML and DoDAF architecture models. The gap I had to close was notation, and I over-estimated how large that gap was.
 
 SysML is not difficult. It is a notation with a specification, and a few weeks of deliberate practice gets you to competence. Georgia Tech's SysML 101/201 sequence was useful for structure, but the language itself was never the obstacle.
 
-The real gap was *method* — knowing what to model, in what order, at what fidelity, and when to stop. Nobody teaches that well, because it is mostly judgment accumulated by doing it and getting it wrong. My first models were meticulous and useless: correct syntax, arbitrary decomposition, far more detail in the parts I understood than the parts that mattered.
+The real gap was *method*: knowing what to model, in what order, at what fidelity, and when to stop. Nobody teaches that well, because it is mostly judgment accumulated by doing it and getting it wrong. My first models were meticulous and useless: correct syntax, arbitrary decomposition, far more detail in the parts I understood than the parts that mattered.
 
 The other gap was scope of concern. As a manufacturing engineer my question was "can this be built and maintained." As a systems engineer the question became "is this the right thing, does it satisfy what it must, and can we prove it." Verification thinking in particular took a while, because it requires designing backwards from evidence rather than forwards from function.
 

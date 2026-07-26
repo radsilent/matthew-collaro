@@ -181,7 +181,7 @@ def json_ld(page, base):
         "@type": "WebSite",
         "@id": f"{base}/#website",
         "url": f"{base}/",
-        "name": f"{PERSON['name']} — {PERSON['role']}",
+        "name": f"{PERSON['name']}, {PERSON['role']}",
         "publisher": {"@id": f"{base}/#person"},
         "inLanguage": "en",
     }]
@@ -299,7 +299,7 @@ def render(page, base, body_html):
 
 <footer class="site-footer">
   <div class="wrap">
-    <p><strong>{PERSON['name']}</strong> &mdash; {PERSON['role']}</p>
+    <p><strong>{PERSON['name']}</strong>, {PERSON['role']}</p>
     <p><a href="{PERSON['github']}" rel="me noopener">GitHub</a> &middot;
        <a href="{PERSON['linkedin']}" rel="me noopener">LinkedIn</a> &middot;
        <a href="{PERSON['company_url']}" rel="noopener">{PERSON['company']}</a></p>
@@ -349,11 +349,11 @@ def build(base):
 
     # Inject the article index into writing.html and index.html.
     listing = "\n".join(
-        f'- [{a["title"].split(" — ")[0]}]({a["out"]}) — {a["description"]}'
+        f'- [{a["title"].split(", " + PERSON["name"])[0]}]({a["out"]}): {a["description"]}'
         for a in articles
     )
     recent = "\n".join(
-        f'- [{a["title"].split(" — ")[0]}]({a["out"]}) — {a["description"]}'
+        f'- [{a["title"].split(", " + PERSON["name"])[0]}]({a["out"]}): {a["description"]}'
         for a in articles[:5]
     )
 

@@ -1,14 +1,14 @@
 ---
-title: Matthew Collaro — Systems Engineer and Founder
+title: Matthew Collaro, Systems Engineer and Founder
 h1: Matthew Collaro
-description: Matthew Collaro is a systems engineer and founder of Vector Stream Systems LLC. Seven years of model-based systems engineering across Boeing, Deloitte, Lucid Motors, and defense space and missile primes.
+description: Matthew Collaro is a systems engineer and founder of Vector Stream Systems LLC. Model-based systems engineering across Boeing, Deloitte, Lucid Motors, and defense primes.
 type: page
 date: 2026-07-24
 ---
 
 I am Matthew Collaro, a systems engineer. Founder and Platform Systems Architect at [Vector Stream Systems LLC](https://vectorstreamsystems.com/), and Senior Systems Engineer at Lucid Motors. Full professional history is on [LinkedIn](https://www.linkedin.com/in/mattcollaro/).
 
-I have spent seven years modeling, integrating, and verifying systems in environments where unverified artifacts do not ship — commercial aircraft networks, strategic missile subsystems, naval concept architectures, and production electric vehicles. That work has run through Boeing Commercial Airplanes, a defense space systems prime, a missile defense prime, Deloitte Government & Public Services, and Parker Hannifin Aerospace.
+I have spent my career modeling, integrating, and verifying systems in environments where unverified artifacts do not ship: commercial aircraft networks, defense systems, naval concept architectures, and production electric vehicles. That work has run through Boeing Commercial Airplanes, two defense primes, Deloitte Government & Public Services, and Parker Hannifin Aerospace.
 
 These days I split my time between vehicle systems integration and building the tooling I kept needing and never found: a governed engineering platform that keeps requirements, architecture models, and verification evidence linked to each other instead of drifting apart.
 
@@ -22,8 +22,8 @@ These days I split my time between vehicle systems integration and building the 
 
 ## Currently
 
-- **Senior Systems Engineer**, Lucid Motors — cross-domain integration of infotainment and driver feedback systems on autonomy-enabled vehicle builds.
-- **Founder & Platform Systems Architect**, Vector Stream Systems LLC — building VectorMBE, a governed engineering intelligence platform. Patent pending.
+- **Senior Systems Engineer**, Lucid Motors, cross-domain integration of infotainment and driver feedback systems on autonomy-enabled vehicle builds.
+- **Founder & Platform Systems Architect**, Vector Stream Systems LLC: building VectorMBE, a governed engineering intelligence platform. Patent pending.
 
 See the [full CV](cv.html), what I have [built](projects.html), or [get in touch](contact.html).
 

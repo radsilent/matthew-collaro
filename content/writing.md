@@ -1,5 +1,5 @@
 ---
-title: Writing — Matthew Collaro
+title: Writing, Matthew Collaro
 h1: Writing
 description: Essays by Matthew Collaro on model-based systems engineering, SysML, requirements traceability, verification, and guardrails for AI-generated engineering artifacts.
 type: page

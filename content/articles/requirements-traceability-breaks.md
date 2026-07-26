@@ -1,5 +1,5 @@
 ---
-title: Why Requirements Traceability Breaks, and What Actually Fixes It — Matthew Collaro
+title: Why Requirements Traceability Breaks, and What Actually Fixes It, Matthew Collaro
 h1: Why requirements traceability breaks, and what actually fixes it
 description: Traceability decays on real programs for structural reasons, not because engineers are lazy. A look at the actual failure modes and what a fix has to do.
 type: article
@@ -22,7 +22,7 @@ The link that matters is the one made by the engineer who decided that this comp
 
 **There is no cost to a missing link.** In most toolchains you can commit a model change that orphans six requirements and nothing happens. No build fails. No reviewer is notified. The cost arrives months later, distributed across people who did not cause it. Systems where the cost of breakage is deferred and diffuse reliably accumulate breakage.
 
-**Coverage is measured, correctness is not.** Programs report traceability coverage — the percentage of requirements with at least one downstream link. This is the metric that is easy to compute, so it is the metric that gets reported, so it is the metric that gets gamed. You can reach 100% coverage with links that are individually meaningless. I have seen requirements traced to a component whose only relationship to the requirement was that both mentioned the word "power."
+**Coverage is measured, correctness is not.** Programs report traceability coverage, the percentage of requirements with at least one downstream link. This is the metric that is easy to compute, so it is the metric that gets reported, so it is the metric that gets gamed. You can reach 100% coverage with links that are individually meaningless. I have seen requirements traced to a component whose only relationship to the requirement was that both mentioned the word "power."
 
 Coverage tells you a link exists. It tells you nothing about whether the link is true.
 
@@ -32,7 +32,7 @@ Coverage tells you a link exists. It tells you nothing about whether the link is
 
 This is not a tooling preference. It is the difference between a relationship the system knows about and a relationship the system merely records.
 
-**Make breakage immediate and local.** The engineer who orphans a requirement should find out during their change, not during a review board six weeks later. This means validation has to run where the work happens — in the model, on commit, in CI — and it has to name the person who caused it while they still have the context to fix it in ten minutes.
+**Make breakage immediate and local.** The engineer who orphans a requirement should find out during their change, not during a review board six weeks later. This means validation has to run where the work happens, in the model, on commit, in CI, and it has to name the person who caused it while they still have the context to fix it in ten minutes.
 
 Programs resist this because it feels like friction. It is friction. It is a small amount of friction now instead of a large amount of archaeology later, and the exchange rate is extremely favorable.
 

@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Why Requirements Traceability Breaks, and What Actually Fixes It — Matthew Collaro</title>
+<title>Why Requirements Traceability Breaks, and What Actually Fixes It, Matthew Collaro</title>
 <meta name="description" content="Traceability decays on real programs for structural reasons, not because engineers are lazy. A look at the actual failure modes and what a fix has to do.">
 <meta name="author" content="Matthew Collaro">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://radsilent.github.io/matthew-collaro/articles/requirements-traceability-breaks.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Matthew Collaro">
-<meta property="og:title" content="Why Requirements Traceability Breaks, and What Actually Fixes It — Matthew Collaro">
+<meta property="og:title" content="Why Requirements Traceability Breaks, and What Actually Fixes It, Matthew Collaro">
 <meta property="og:description" content="Traceability decays on real programs for structural reasons, not because engineers are lazy. A look at the actual failure modes and what a fix has to do.">
 <meta property="og:url" content="https://radsilent.github.io/matthew-collaro/articles/requirements-traceability-breaks.html">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Why Requirements Traceability Breaks, and What Actually Fixes It — Matthew Collaro">
+<meta name="twitter:title" content="Why Requirements Traceability Breaks, and What Actually Fixes It, Matthew Collaro">
 <meta name="twitter:description" content="Traceability decays on real programs for structural reasons, not because engineers are lazy. A look at the actual failure modes and what a fix has to do.">
 <link rel="stylesheet" href="../style.css">
 <script type="application/ld+json">
@@ -67,7 +67,7 @@
       "@type": "WebSite",
       "@id": "https://radsilent.github.io/matthew-collaro/#website",
       "url": "https://radsilent.github.io/matthew-collaro/",
-      "name": "Matthew Collaro \u2014 Systems Engineer",
+      "name": "Matthew Collaro, Systems Engineer",
       "publisher": {
         "@id": "https://radsilent.github.io/matthew-collaro/#person"
       },
@@ -76,7 +76,7 @@
     {
       "@type": "BlogPosting",
       "@id": "https://radsilent.github.io/matthew-collaro/articles/requirements-traceability-breaks.html#article",
-      "headline": "Why Requirements Traceability Breaks, and What Actually Fixes It \u2014 Matthew Collaro",
+      "headline": "Why Requirements Traceability Breaks, and What Actually Fixes It, Matthew Collaro",
       "description": "Traceability decays on real programs for structural reasons, not because engineers are lazy. A look at the actual failure modes and what a fix has to do.",
       "url": "https://radsilent.github.io/matthew-collaro/articles/requirements-traceability-breaks.html",
       "datePublished": "2026-07-14",
@@ -129,12 +129,12 @@
 <p><strong>Links are created at the wrong time.</strong> Trace links get created during a push before a milestone, by whoever has capacity, working from documents rather than from the design conversation. That person is reconstructing intent they were not present for. They will produce links that are defensible in review and disconnected from why the requirement exists.</p>
 <p>The link that matters is the one made by the engineer who decided that this component satisfies that requirement, at the moment they decided it. Any later reconstruction is archaeology.</p>
 <p><strong>There is no cost to a missing link.</strong> In most toolchains you can commit a model change that orphans six requirements and nothing happens. No build fails. No reviewer is notified. The cost arrives months later, distributed across people who did not cause it. Systems where the cost of breakage is deferred and diffuse reliably accumulate breakage.</p>
-<p><strong>Coverage is measured, correctness is not.</strong> Programs report traceability coverage — the percentage of requirements with at least one downstream link. This is the metric that is easy to compute, so it is the metric that gets reported, so it is the metric that gets gamed. You can reach 100% coverage with links that are individually meaningless. I have seen requirements traced to a component whose only relationship to the requirement was that both mentioned the word "power."</p>
+<p><strong>Coverage is measured, correctness is not.</strong> Programs report traceability coverage, the percentage of requirements with at least one downstream link. This is the metric that is easy to compute, so it is the metric that gets reported, so it is the metric that gets gamed. You can reach 100% coverage with links that are individually meaningless. I have seen requirements traced to a component whose only relationship to the requirement was that both mentioned the word "power."</p>
 <p>Coverage tells you a link exists. It tells you nothing about whether the link is true.</p>
 <h2 id="what-a-fix-has-to-do">What a fix has to do</h2>
 <p><strong>Make the link a first-class object, not a reference.</strong> If a trace link is a row in a spreadsheet pointing at two identifiers, it will rot. If it is an edge in a graph where both endpoints are the actual objects, then renaming a requirement moves the edge with it, and deleting a component either fails or explicitly orphans what depended on it. This is the same reason you use foreign keys instead of storing a name and hoping.</p>
 <p>This is not a tooling preference. It is the difference between a relationship the system knows about and a relationship the system merely records.</p>
-<p><strong>Make breakage immediate and local.</strong> The engineer who orphans a requirement should find out during their change, not during a review board six weeks later. This means validation has to run where the work happens — in the model, on commit, in CI — and it has to name the person who caused it while they still have the context to fix it in ten minutes.</p>
+<p><strong>Make breakage immediate and local.</strong> The engineer who orphans a requirement should find out during their change, not during a review board six weeks later. This means validation has to run where the work happens, in the model, on commit, in CI, and it has to name the person who caused it while they still have the context to fix it in ten minutes.</p>
 <p>Programs resist this because it feels like friction. It is friction. It is a small amount of friction now instead of a large amount of archaeology later, and the exchange rate is extremely favorable.</p>
 <p><strong>Capture rationale with the link.</strong> A trace link with no rationale is a claim with no argument. Ten minutes of typing when the decision is made saves an afternoon of reconstruction when someone asks why in eighteen months. The engineers who resist this most are usually the ones who will be asked.</p>
 <p><strong>Measure change impact, not coverage.</strong> The question worth answering is not "what fraction of requirements have links." It is "if I change this interface, what needs review." A traceability structure that can answer the second question accurately is useful even at partial coverage. One that reports 100% coverage but cannot answer it is theater.</p>
@@ -151,7 +151,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p><strong>Matthew Collaro</strong> &mdash; Systems Engineer</p>
+    <p><strong>Matthew Collaro</strong>, Systems Engineer</p>
     <p><a href="https://github.com/radsilent" rel="me noopener">GitHub</a> &middot;
        <a href="https://www.linkedin.com/in/mattcollaro/" rel="me noopener">LinkedIn</a> &middot;
        <a href="https://vectorstreamsystems.com/" rel="noopener">Vector Stream Systems LLC</a></p>

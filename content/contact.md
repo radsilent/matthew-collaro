@@ -10,17 +10,17 @@ I am open to conversations about model-based systems engineering adoption, requi
 
 ## Where to find me
 
-- **LinkedIn** — [linkedin.com/in/mattcollaro](https://www.linkedin.com/in/mattcollaro/)
-- **Personal site** — [radsilent.github.io](https://radsilent.github.io/)
-- **GitHub** — [github.com/radsilent](https://github.com/radsilent)
-- **Company** — [Vector Stream Systems LLC](https://vectorstreamsystems.com/)
-- **Consulting enquiries** — via the [Vector Stream Systems contact page](https://vectorstreamsystems.com/contact.html)
+- **LinkedIn**, [linkedin.com/in/mattcollaro](https://www.linkedin.com/in/mattcollaro/)
+- **Personal site**, [radsilent.github.io](https://radsilent.github.io/)
+- **GitHub**, [github.com/radsilent](https://github.com/radsilent)
+- **Company**, [Vector Stream Systems LLC](https://vectorstreamsystems.com/)
+- **Consulting enquiries**, via the [Vector Stream Systems contact page](https://vectorstreamsystems.com/contact.html)
 
 ## What I am useful for
 
 **MBSE adoption that survives contact with a program.** I led a community of practice of over 100 engineers at Boeing and have watched modeling initiatives succeed and fail. The failure mode is almost never the tool.
 
-**Traceability architecture.** Designing the relationship model — what links to what, what is enforced, what is advisory — before you have 40,000 requirements and no way to answer a change impact question.
+**Traceability architecture.** Designing the relationship model, what links to what, what is enforced, what is advisory, before you have 40,000 requirements and no way to answer a change impact question.
 
 **Governed AI tooling for engineering.** If you want language models near your requirements or your architecture model, the interesting problem is not the model. It is the constraint layer that decides what the model is allowed to assert and how you audit it afterwards.
 

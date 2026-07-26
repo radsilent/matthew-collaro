@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>From the Factory Floor to Systems Architecture — Matthew Collaro</title>
+<title>From the Factory Floor to Systems Architecture, Matthew Collaro</title>
 <meta name="description" content="How writing overhaul instructions for flight control actuators turned out to be useful preparation for architecture modeling, and what I would tell someone making the same move.">
 <meta name="author" content="Matthew Collaro">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://radsilent.github.io/matthew-collaro/articles/mechanical-engineer-to-mbse.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Matthew Collaro">
-<meta property="og:title" content="From the Factory Floor to Systems Architecture — Matthew Collaro">
+<meta property="og:title" content="From the Factory Floor to Systems Architecture, Matthew Collaro">
 <meta property="og:description" content="How writing overhaul instructions for flight control actuators turned out to be useful preparation for architecture modeling, and what I would tell someone making the same move.">
 <meta property="og:url" content="https://radsilent.github.io/matthew-collaro/articles/mechanical-engineer-to-mbse.html">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="From the Factory Floor to Systems Architecture — Matthew Collaro">
+<meta name="twitter:title" content="From the Factory Floor to Systems Architecture, Matthew Collaro">
 <meta name="twitter:description" content="How writing overhaul instructions for flight control actuators turned out to be useful preparation for architecture modeling, and what I would tell someone making the same move.">
 <link rel="stylesheet" href="../style.css">
 <script type="application/ld+json">
@@ -67,7 +67,7 @@
       "@type": "WebSite",
       "@id": "https://radsilent.github.io/matthew-collaro/#website",
       "url": "https://radsilent.github.io/matthew-collaro/",
-      "name": "Matthew Collaro \u2014 Systems Engineer",
+      "name": "Matthew Collaro, Systems Engineer",
       "publisher": {
         "@id": "https://radsilent.github.io/matthew-collaro/#person"
       },
@@ -76,12 +76,12 @@
     {
       "@type": "BlogPosting",
       "@id": "https://radsilent.github.io/matthew-collaro/articles/mechanical-engineer-to-mbse.html#article",
-      "headline": "From the Factory Floor to Systems Architecture \u2014 Matthew Collaro",
+      "headline": "From the Factory Floor to Systems Architecture, Matthew Collaro",
       "description": "How writing overhaul instructions for flight control actuators turned out to be useful preparation for architecture modeling, and what I would tell someone making the same move.",
       "url": "https://radsilent.github.io/matthew-collaro/articles/mechanical-engineer-to-mbse.html",
       "datePublished": "2026-01-24",
       "dateModified": "2026-01-24",
-      "wordCount": 889,
+      "wordCount": 888,
       "author": {
         "@id": "https://radsilent.github.io/matthew-collaro/#person"
       },
@@ -119,7 +119,7 @@
   <article>
     <header class="page-head">
       <h1>From the factory floor to systems architecture</h1>
-      <p class="byline">By <a href="../index.html" rel="author">Matthew Collaro</a> &middot; <time datetime="2026-01-24">January 24, 2026</time> &middot; 889 words</p>
+      <p class="byline">By <a href="../index.html" rel="author">Matthew Collaro</a> &middot; <time datetime="2026-01-24">January 24, 2026</time> &middot; 888 words</p>
     </header>
 <p>My first engineering job was writing repair and overhaul work instructions for electro-mechanical flight control actuation systems at Parker Hannifin. Military aircraft sustainment. A mechanical engineering degree and a stack of drawings.</p>
 <p>It is not the obvious path into model-based systems engineering, and for a while I treated it as something to get past. I have come around to thinking it was the most useful two years I could have had.</p>
@@ -130,9 +130,9 @@
 <p><strong>Interfaces are real objects.</strong> When I replaced legacy analog hydraulic test units with digital data acquisition systems, the interface was not a line on a diagram. It was a connector, a signal conditioning path, a sample rate, and a calibration procedure. It is harder to hand-wave an interface after you have physically wired one and watched it produce nonsense because of an assumption you did not know you had made.</p>
 <p>Most interface defects I have seen since are the same defect at a different scale: two sides holding incompatible assumptions that neither wrote down.</p>
 <h2 id="the-transition">The transition</h2>
-<p>I moved into systems engineering at a missile defense prime, modeling embedded system interfaces and building SysML and DoDAF architecture models. The gap I had to close was notation, and I over-estimated how large that gap was.</p>
+<p>I moved into systems engineering at a defense prime, modeling embedded system interfaces and building SysML and DoDAF architecture models. The gap I had to close was notation, and I over-estimated how large that gap was.</p>
 <p>SysML is not difficult. It is a notation with a specification, and a few weeks of deliberate practice gets you to competence. Georgia Tech's SysML 101/201 sequence was useful for structure, but the language itself was never the obstacle.</p>
-<p>The real gap was <em>method</em> — knowing what to model, in what order, at what fidelity, and when to stop. Nobody teaches that well, because it is mostly judgment accumulated by doing it and getting it wrong. My first models were meticulous and useless: correct syntax, arbitrary decomposition, far more detail in the parts I understood than the parts that mattered.</p>
+<p>The real gap was <em>method</em>: knowing what to model, in what order, at what fidelity, and when to stop. Nobody teaches that well, because it is mostly judgment accumulated by doing it and getting it wrong. My first models were meticulous and useless: correct syntax, arbitrary decomposition, far more detail in the parts I understood than the parts that mattered.</p>
 <p>The other gap was scope of concern. As a manufacturing engineer my question was "can this be built and maintained." As a systems engineer the question became "is this the right thing, does it satisfy what it must, and can we prove it." Verification thinking in particular took a while, because it requires designing backwards from evidence rather than forwards from function.</p>
 <h2 id="what-i-would-tell-someone-making-the-move">What I would tell someone making the move</h2>
 <p><strong>Learn the method, not just the notation.</strong> Being fluent in SysML and having no method produces syntactically valid models with arbitrary structure. Read about OOSEM or a comparable method and use it deliberately, even when it feels like overhead. The sequencing is the value.</p>
@@ -149,7 +149,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p><strong>Matthew Collaro</strong> &mdash; Systems Engineer</p>
+    <p><strong>Matthew Collaro</strong>, Systems Engineer</p>
     <p><a href="https://github.com/radsilent" rel="me noopener">GitHub</a> &middot;
        <a href="https://www.linkedin.com/in/mattcollaro/" rel="me noopener">LinkedIn</a> &middot;
        <a href="https://vectorstreamsystems.com/" rel="noopener">Vector Stream Systems LLC</a></p>
