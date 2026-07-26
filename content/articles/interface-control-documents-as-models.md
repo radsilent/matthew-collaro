@@ -8,7 +8,7 @@ date: 2026-06-09
 
 An interface control document is a contract between two teams who will not talk to each other again for six months. It should be treated with the seriousness of a contract. Usually it is treated with the seriousness of a Word file.
 
-I have spent a lot of my career on interfaces — modeling embedded system interfaces at Raytheon, building model-based Interface Control Diagrams at Boeing, and more recently untangling signal ownership across infotainment controllers, body modules, and autonomous compute domains in vehicles. The pattern is consistent enough that I think it is structural.
+I have spent a lot of my career on interfaces — modeling embedded system interfaces at a missile defense prime, building model-based Interface Control Diagrams at Boeing, and more recently untangling signal ownership across infotainment controllers, body modules, and autonomous compute domains in vehicles. The pattern is consistent enough that I think it is structural.
 
 ## What goes wrong with the document form
 
@@ -38,7 +38,7 @@ When the interface is a model element rather than a section of prose, several th
 
 ## Interfaces as a security surface
 
-At Raytheon I modeled embedded system interfaces partly for integration and partly for cybersecurity. At Boeing, model-based ICDs fed directly into networked system vulnerability identification during threat analysis.
+At the missile defense prime I modeled embedded system interfaces partly for integration and partly for cybersecurity. At Boeing, model-based ICDs fed directly into networked system vulnerability identification during threat analysis.
 
 The connection is not obvious until you have done it, and then it is hard to unsee: **an interface you cannot specify precisely is an interface nobody fully owns, and interfaces nobody fully owns are where the exposure is.** Formal modeling does not find vulnerabilities by being clever. It finds them by refusing to accept vagueness, and vagueness is where the exposure hides.
 

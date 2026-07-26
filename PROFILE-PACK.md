@@ -49,8 +49,8 @@ do only one thing on this list, do this one, and make sure the profile is set to
 > Systems Engineer | MBSE & SysML | Founder at Vector Stream Systems
 
 **About section:**
-> Systems engineer with seven years across aerospace, defense, and automotive — Boeing Commercial Airplanes, Northrop Grumman Space
-> Systems, Raytheon Missiles & Defense, Deloitte Government & Public Services,
+> Systems engineer with seven years across aerospace, defense, and automotive — Boeing Commercial Airplanes, a defense space
+> systems prime, a missile defense prime, Deloitte Government & Public Services,
 > and Parker Hannifin Aerospace.
 >
 > I work as a Senior Systems Engineer at Lucid Motors on cross-domain

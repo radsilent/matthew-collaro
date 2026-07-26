@@ -46,7 +46,7 @@ I have written elsewhere about [model governance](sysml-model-governance.html). 
 
 There is a window early on where establishing conventions costs almost nothing, because the model is small and few people are working in it. Programs skip this because it feels premature and there is pressure to show model content.
 
-Then the model is large, twenty engineers have developed incompatible local conventions, and harmonizing them is a project nobody has budget for. I have restored degraded architecture models — that was a substantial part of my work at Northrop Grumman — and the cost of retrofitting structure is many times the cost of establishing it early.
+Then the model is large, twenty engineers have developed incompatible local conventions, and harmonizing them is a project nobody has budget for. I have restored degraded architecture models — that was a substantial part of my work at a defense space systems prime — and the cost of retrofitting structure is many times the cost of establishing it early.
 
 If I had one lever, I would spend it here. Set naming, decomposition, and traceability conventions in the first month, enforce them automatically, and accept looking slow for a few weeks.
 

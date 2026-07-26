@@ -1,7 +1,7 @@
 ---
 title: Matthew Collaro — CV and Professional Experience
 h1: Curriculum Vitae
-description: Full professional history of Matthew Collaro, systems engineer — Lucid Motors, Vector Stream Systems, Boeing Commercial Airplanes, Northrop Grumman, Deloitte, Raytheon, and Parker Hannifin Aerospace.
+description: Full professional history of Matthew Collaro, systems engineer — Lucid Motors, Vector Stream Systems, Boeing Commercial Airplanes, Deloitte, Parker Hannifin Aerospace, and defense space and missile primes.
 type: page
 date: 2026-07-24
 ---
@@ -42,7 +42,7 @@ Patent-pending Autonomous Requirements Traceability and Engineering Synchronizat
 - Led a community of practice of more than 100 engineers advancing MBSE adoption within Cabin and Network Systems.
 - Planned and executed major revisions to network and IoT system models, establishing development plans coordinating integrated product teams spanning roughly 300 engineers.
 
-### Systems Engineer, Interface Design and MBSE — Northrop Grumman Space Systems
+### Systems Engineer, Interface Design and MBSE — Space Systems Prime (Defense)
 
 *January 2022 to August 2022*
 
@@ -54,7 +54,7 @@ Patent-pending Autonomous Requirements Traceability and Engineering Synchronizat
 
 - Developed MBSE architecture representations for advanced naval concept systems using OOSEM methodologies.
 
-### Systems Engineer — Raytheon Missiles and Defense
+### Systems Engineer — Missile Defense Prime
 
 *June 2020 to July 2021*
 

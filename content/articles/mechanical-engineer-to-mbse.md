@@ -24,7 +24,7 @@ Most interface defects I have seen since are the same defect at a different scal
 
 ## The transition
 
-I moved into systems engineering at Raytheon, modeling embedded system interfaces and building SysML and DoDAF architecture models. The gap I had to close was notation, and I over-estimated how large that gap was.
+I moved into systems engineering at a missile defense prime, modeling embedded system interfaces and building SysML and DoDAF architecture models. The gap I had to close was notation, and I over-estimated how large that gap was.
 
 SysML is not difficult. It is a notation with a specification, and a few weeks of deliberate practice gets you to competence. Georgia Tech's SysML 101/201 sequence was useful for structure, but the language itself was never the obstacle.
 

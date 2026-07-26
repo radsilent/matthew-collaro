@@ -8,7 +8,7 @@ date: 2026-03-06
 
 On defense programs, architecture products are contract deliverables. That fact shapes how they get made, and usually not for the better.
 
-I developed SysML and DoDAF architecture models at Raytheon supporting integration planning and verification alignment across strategic missile subsystems, and MBSE architecture representations for advanced naval concept systems at Deloitte using OOSEM. The dysfunction is consistent across both, and it is worth naming precisely because it is so easy to reproduce.
+I developed SysML and DoDAF architecture models at a missile defense prime supporting integration planning and verification alignment across strategic missile subsystems, and MBSE architecture representations for advanced naval concept systems at Deloitte using OOSEM. The dysfunction is consistent across both, and it is worth naming precisely because it is so easy to reproduce.
 
 ## Viewpoint theater
 
@@ -64,7 +64,7 @@ The most concrete return I have seen from doing this properly is integration pla
 
 When interfaces are modeled with types, when allocation is explicit, and when verification methods are attached to requirements, the integration sequence is largely derivable. You know which subsystems must be available before which tests, because you know which interfaces those tests exercise. You know what a slip in one subsystem does to the test schedule.
 
-Producing that by hand, from documents, across software, electrical, and test teams, was a substantial part of what I did at Raytheon in technical data packages and subsystem integration instructions. Most of the effort was reconciling sources that disagreed. From a coherent model, it is a query.
+Producing that by hand, from documents, across software, electrical, and test teams, was a substantial part of what I did at a missile defense prime in technical data packages and subsystem integration instructions. Most of the effort was reconciling sources that disagreed. From a coherent model, it is a query.
 
 That is the difference between architecture products as a deliverable and architecture as engineering.
 

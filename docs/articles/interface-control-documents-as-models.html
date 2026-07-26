@@ -81,7 +81,7 @@
       "url": "https://radsilent.github.io/matthew-collaro/articles/interface-control-documents-as-models.html",
       "datePublished": "2026-06-09",
       "dateModified": "2026-06-09",
-      "wordCount": 970,
+      "wordCount": 976,
       "author": {
         "@id": "https://radsilent.github.io/matthew-collaro/#person"
       },
@@ -119,10 +119,10 @@
   <article>
     <header class="page-head">
       <h1>Interface control documents should be models</h1>
-      <p class="byline">By <a href="../index.html" rel="author">Matthew Collaro</a> &middot; <time datetime="2026-06-09">June 9, 2026</time> &middot; 970 words</p>
+      <p class="byline">By <a href="../index.html" rel="author">Matthew Collaro</a> &middot; <time datetime="2026-06-09">June 9, 2026</time> &middot; 976 words</p>
     </header>
 <p>An interface control document is a contract between two teams who will not talk to each other again for six months. It should be treated with the seriousness of a contract. Usually it is treated with the seriousness of a Word file.</p>
-<p>I have spent a lot of my career on interfaces — modeling embedded system interfaces at Raytheon, building model-based Interface Control Diagrams at Boeing, and more recently untangling signal ownership across infotainment controllers, body modules, and autonomous compute domains in vehicles. The pattern is consistent enough that I think it is structural.</p>
+<p>I have spent a lot of my career on interfaces — modeling embedded system interfaces at a missile defense prime, building model-based Interface Control Diagrams at Boeing, and more recently untangling signal ownership across infotainment controllers, body modules, and autonomous compute domains in vehicles. The pattern is consistent enough that I think it is structural.</p>
 <h2 id="what-goes-wrong-with-the-document-form">What goes wrong with the document form</h2>
 <p><strong>Prose admits ambiguity that implementation cannot.</strong> "The controller shall report status periodically." Two teams read this. One implements a 100 ms periodic message. The other implements on-change reporting with a 1 s heartbeat and considers it periodic. Both are defensible readings. Both pass document review, because the reviewer also read it as whichever one they had in mind.</p>
 <p>You find out on the bench. If you are lucky, you find out on the bench.</p>
@@ -137,7 +137,7 @@
 <p><strong>There is one instance.</strong> Both sides reference the same element. There is no your-copy and my-copy. Disagreements about what the interface is become impossible to sustain, which sounds trivial and eliminates an entire genre of integration meeting.</p>
 <p><strong>Views can be generated per consumer.</strong> The software team wants message formats. The safety team wants failure propagation paths. The test team wants observability points. From one model you generate three views that cannot contradict each other, because they are projections of the same underlying thing. From one document you get one document that serves nobody especially well.</p>
 <h2 id="interfaces-as-a-security-surface">Interfaces as a security surface</h2>
-<p>At Raytheon I modeled embedded system interfaces partly for integration and partly for cybersecurity. At Boeing, model-based ICDs fed directly into networked system vulnerability identification during threat analysis.</p>
+<p>At the missile defense prime I modeled embedded system interfaces partly for integration and partly for cybersecurity. At Boeing, model-based ICDs fed directly into networked system vulnerability identification during threat analysis.</p>
 <p>The connection is not obvious until you have done it, and then it is hard to unsee: <strong>an interface you cannot specify precisely is an interface nobody fully owns, and interfaces nobody fully owns are where the exposure is.</strong> Formal modeling does not find vulnerabilities by being clever. It finds them by refusing to accept vagueness, and vagueness is where the exposure hides.</p>
 <p>Ask what data crosses a boundary, in what direction, under what authority, and with what validation on receipt. Model that honestly and the gaps announce themselves. Write it as prose and the gaps read as reasonable-sounding paragraphs.</p>
 <h2 id="objections-worth-taking-seriously">Objections worth taking seriously</h2>
