@@ -81,7 +81,7 @@
       "url": "https://radsilent.github.io/matthew-collaro/articles/interface-control-documents-as-models.html",
       "datePublished": "2026-06-09",
       "dateModified": "2026-06-09",
-      "wordCount": 976,
+      "wordCount": 969,
       "author": {
         "@id": "https://radsilent.github.io/matthew-collaro/#person"
       },
@@ -119,10 +119,10 @@
   <article>
     <header class="page-head">
       <h1>Interface control documents should be models</h1>
-      <p class="byline">By <a href="../index.html" rel="author">Matthew Collaro</a> &middot; <time datetime="2026-06-09">June 9, 2026</time> &middot; 976 words</p>
+      <p class="byline">By <a href="../index.html" rel="author">Matthew Collaro</a> &middot; <time datetime="2026-06-09">June 9, 2026</time> &middot; 969 words</p>
     </header>
 <p>An interface control document is a contract between two teams who will not talk to each other again for six months. It should be treated with the seriousness of a contract. Usually it is treated with the seriousness of a Word file.</p>
-<p>I have spent a lot of my career on interfaces — modeling embedded system interfaces at a missile defense prime, building model-based Interface Control Diagrams at Boeing, and more recently untangling signal ownership across infotainment controllers, body modules, and autonomous compute domains in vehicles. The pattern is consistent enough that I think it is structural.</p>
+<p>I have spent a lot of my career on interfaces — modeling embedded system interfaces at a missile defense prime, building model-based Interface Control Diagrams at Boeing, and more recently untangling signal ownership within vehicle infotainment controllers. The pattern is consistent enough that I think it is structural.</p>
 <h2 id="what-goes-wrong-with-the-document-form">What goes wrong with the document form</h2>
 <p><strong>Prose admits ambiguity that implementation cannot.</strong> "The controller shall report status periodically." Two teams read this. One implements a 100 ms periodic message. The other implements on-change reporting with a 1 s heartbeat and considers it periodic. Both are defensible readings. Both pass document review, because the reviewer also read it as whichever one they had in mind.</p>
 <p>You find out on the bench. If you are lucky, you find out on the bench.</p>

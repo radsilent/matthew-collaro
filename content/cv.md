@@ -15,7 +15,7 @@ Matthew Collaro. Systems engineer with seven years across aerospace, defense, an
 *November 2025 to present*
 
 - Cross-domain integration of infotainment and driver feedback systems on autonomy-enabled vehicle builds, resolving notification timing, media routing, and vehicle state synchronization defects affecting feature readiness.
-- MBSE and SysML behavioral models of vehicle audio architectures and HMI interaction flows, clarifying signal dependencies and functional ownership across infotainment controllers, body modules, and autonomous compute domains.
+- MBSE and SysML behavioral models of vehicle audio architectures and HMI interaction flows, clarifying signal dependencies and functional ownership within infotainment controllers.
 - Platform bring-up and integration readiness across Cosmos midsize architecture variants and Lucid Gravity.
 
 ### Founder and Platform Systems Architect — Vector Stream Systems LLC
@@ -40,7 +40,6 @@ Patent-pending Autonomous Requirements Traceability and Engineering Synchronizat
 - Developed model-based safety and hazard assessment tooling integrated into engineering workflows for certification-oriented analysis.
 - Conceptualized distributed aircraft network architecture enhancements across 777 and 787 platforms for safety, redundancy, and cyber resilience.
 - Led a community of practice of more than 100 engineers advancing MBSE adoption within Cabin and Network Systems.
-- Planned and executed major revisions to network and IoT system models, establishing development plans coordinating integrated product teams spanning roughly 300 engineers.
 
 ### Systems Engineer, Interface Design and MBSE — Space Systems Prime (Defense)
 

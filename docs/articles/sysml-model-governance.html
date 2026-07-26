@@ -81,7 +81,7 @@
       "url": "https://radsilent.github.io/matthew-collaro/articles/sysml-model-governance.html",
       "datePublished": "2026-06-28",
       "dateModified": "2026-06-28",
-      "wordCount": 973,
+      "wordCount": 964,
       "author": {
         "@id": "https://radsilent.github.io/matthew-collaro/#person"
       },
@@ -119,7 +119,7 @@
   <article>
     <header class="page-head">
       <h1>Model governance for SysML programs that have to certify</h1>
-      <p class="byline">By <a href="../index.html" rel="author">Matthew Collaro</a> &middot; <time datetime="2026-06-28">June 28, 2026</time> &middot; 973 words</p>
+      <p class="byline">By <a href="../index.html" rel="author">Matthew Collaro</a> &middot; <time datetime="2026-06-28">June 28, 2026</time> &middot; 964 words</p>
     </header>
 <p>There is a moment on every MBSE program where someone asks whether the model is authoritative. The answer determines everything that follows, and most programs answer it by accident.</p>
 <p>If the model is authoritative, it is a controlled artifact and changes to it are engineering changes. If it is not, it is documentation, and documentation drifts. There is no stable middle position, though many programs try to occupy one — the model is authoritative in the sense that everyone agrees it should be, and non-authoritative in the sense that nobody gates anything on it.</p>
@@ -137,7 +137,7 @@
 <p>The most common governance failure is drawing ownership boundaries around organizations instead of around interfaces.</p>
 <p>If the model is partitioned by team — cabin systems owns this package, network systems owns that one — then every interface between them sits on a boundary with two owners or none. In practice it is none. Interfaces are where integration problems live, and putting them in ownership no-man's-land is how you get a model that looks complete and integrates badly.</p>
 <p>Partitioning by interface is harder to set up and much better. Every interface gets a single owning engineer, who is responsible for its definition being precise enough that both sides can implement against it independently. Whether that engineer sits in the cabin org or the network org matters less than whether they exist.</p>
-<p>At Boeing, doing this on network and IoT system models across integrated product teams spanning roughly 300 engineers was the difference between revisions that converged and revisions that ping-ponged.</p>
+<p>At Boeing, doing this across large integrated product teams was the difference between revisions that converged and revisions that ping-ponged.</p>
 <h2 id="validation-has-to-be-automated-or-it-does-not-happen">Validation has to be automated or it does not happen</h2>
 <p>Manual model review does not scale, and more importantly it does not catch the things automation catches. A reviewer looking at a decomposition will notice that it seems wrong. They will not notice that a port on a nested block has no matching connector three levels up, because nobody holds a model that large in their head.</p>
 <p>The rules worth automating are the boring ones:</p>

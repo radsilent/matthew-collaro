@@ -31,7 +31,7 @@ If the model is partitioned by team — cabin systems owns this package, network
 
 Partitioning by interface is harder to set up and much better. Every interface gets a single owning engineer, who is responsible for its definition being precise enough that both sides can implement against it independently. Whether that engineer sits in the cabin org or the network org matters less than whether they exist.
 
-At Boeing, doing this on network and IoT system models across integrated product teams spanning roughly 300 engineers was the difference between revisions that converged and revisions that ping-ponged.
+At Boeing, doing this across large integrated product teams was the difference between revisions that converged and revisions that ping-ponged.
 
 ## Validation has to be automated or it does not happen
 

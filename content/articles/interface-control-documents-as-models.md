@@ -8,7 +8,7 @@ date: 2026-06-09
 
 An interface control document is a contract between two teams who will not talk to each other again for six months. It should be treated with the seriousness of a contract. Usually it is treated with the seriousness of a Word file.
 
-I have spent a lot of my career on interfaces — modeling embedded system interfaces at a missile defense prime, building model-based Interface Control Diagrams at Boeing, and more recently untangling signal ownership across infotainment controllers, body modules, and autonomous compute domains in vehicles. The pattern is consistent enough that I think it is structural.
+I have spent a lot of my career on interfaces — modeling embedded system interfaces at a missile defense prime, building model-based Interface Control Diagrams at Boeing, and more recently untangling signal ownership within vehicle infotainment controllers. The pattern is consistent enough that I think it is structural.
 
 ## What goes wrong with the document form
 
